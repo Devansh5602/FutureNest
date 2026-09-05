@@ -116,6 +116,8 @@
 
   --container-max: 1440px;
 
+  --header-height: 72px;
+
   --z-base: 1;
   --z-raised: 10;
   --z-overlay: 100;

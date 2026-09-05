@@ -12,8 +12,8 @@ document.addEventListener('DOMContentLoaded', () => {
         
         const href = link.getAttribute('href');
         
-        // Ignore external links, anchor links, or links opening in a new tab
-        if (!href || href.startsWith('#') || href.startsWith('http') || link.hasAttribute('target')) {
+        // Ignore external links, anchor links, mailto/tel, or links opening in a new tab
+        if (!href || href.startsWith('#') || href.startsWith('http') || href.startsWith('mailto:') || href.startsWith('tel:') || href.startsWith('javascript:') || link.hasAttribute('target')) {
             return;
         }
         
@@ -100,12 +100,16 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     function updateActiveLinks() {
-        const currentUrl = window.location.href.split('#')[0]; // Ignore hash
+        const path = window.location.pathname.replace(/\/index\.html$/, '/') || '/';
         const navLinks = document.querySelectorAll('.nav__link, .mobile-nav__link');
         
         navLinks.forEach(link => {
-            const linkUrl = link.href.split('#')[0];
-            if (linkUrl === currentUrl || linkUrl === currentUrl + '/') {
+            const linkHref = link.getAttribute('href');
+            if (!linkHref || linkHref.startsWith('#') || linkHref.startsWith('http')) return;
+            const linkPath = linkHref.replace(/\/index\.html$/, '/') || '/';
+            const isActive = (linkPath === '/' && path === '/') || (linkPath !== '/' && path.startsWith(linkPath));
+            
+            if (isActive) {
                 link.classList.add('active');
             } else {
                 link.classList.remove('active');

@@ -243,8 +243,3 @@ button:hover .arrow-right {
   background: var(--color-primary);
   border-radius: 2px;
 }
-.mobile-nav__link.active {
-  background: var(--color-surface);
-  color: var(--color-primary);
-  border-left: 3px solid var(--color-primary);
-}

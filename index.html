@@ -152,35 +152,50 @@
       </div>
     </header>
 
+    <!-- Mobile Nav Backdrop -->
+    <div class="mobile-nav-backdrop" id="mobile-nav-backdrop"></div>
+
     <!-- Mobile Navigation -->
     <nav class="mobile-nav" id="mobile-nav" aria-label="Mobile navigation">
-      <a href="/" class="mobile-nav__link" data-mobile-link>Home</a>
-      <a href="/services/" class="mobile-nav__link" data-mobile-link>Services</a>
-      <a href="/about/" class="mobile-nav__link" data-mobile-link>About Us</a>
-      <a href="/contact/" class="mobile-nav__link" data-mobile-link>Contact Us</a>
-      <div class="mobile-nav__footer">
-        <div class="mobile-nav__theme">
-          <button class="theme-toggle" data-theme-toggle aria-label="Switch theme" aria-pressed="false">
-            <svg data-icon-moon class="theme-toggle__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-              stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
-            </svg>
-            <svg data-icon-sun class="theme-toggle__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-              stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <circle cx="12" cy="12" r="5" />
-              <line x1="12" y1="1" x2="12" y2="3" />
-              <line x1="12" y1="21" x2="12" y2="23" />
-              <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" />
-              <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
-              <line x1="1" y1="12" x2="3" y2="12" />
-              <line x1="21" y1="12" x2="23" y2="12" />
-              <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" />
-              <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
-            </svg>
-          </button>
-          <span>Toggle theme</span>
+      <div class="mobile-nav__content">
+        <div class="mobile-nav__links">
+          <a href="/" class="mobile-nav__link" data-mobile-link>
+            <span class="mobile-nav__link-text">Home</span>
+            <svg class="mobile-nav__link-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
+          </a>
+          <a href="/services/" class="mobile-nav__link" data-mobile-link>
+            <span class="mobile-nav__link-text">Services</span>
+            <svg class="mobile-nav__link-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
+          </a>
+          <a href="/about/" class="mobile-nav__link" data-mobile-link>
+            <span class="mobile-nav__link-text">About Us</span>
+            <svg class="mobile-nav__link-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
+          </a>
+          <a href="/contact/" class="mobile-nav__link" data-mobile-link>
+            <span class="mobile-nav__link-text">Contact Us</span>
+            <svg class="mobile-nav__link-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
+          </a>
         </div>
-        <a href="/contact/" class="btn btn--primary" data-mobile-link>Get Started</a>
+
+        <!-- Quick Help Card -->
+        <div class="mobile-nav__help-card">
+          <span class="mobile-nav__help-badge">Quick Assistance</span>
+          <p class="mobile-nav__help-text">Need help with recruitment or placement? Reach our team directly.</p>
+          <div class="mobile-nav__help-actions">
+            <a href="tel:+18005550148" class="mobile-nav__help-link">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.62 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.6a16 16 0 0 0 6 6l.96-.96a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              <span>+1 (800) 555-0148</span>
+            </a>
+            <a href="mailto:hello@futurenestplacement.com" class="mobile-nav__help-link">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              <span>hello@futurenestplacement.com</span>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="mobile-nav__footer">
+        <a href="/contact/" class="btn btn--primary btn--full" data-mobile-link>Get Started</a>
       </div>
     </nav>
 
