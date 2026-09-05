@@ -1,0 +1,551 @@
+/* ============================================================
+   responsive.css — Responsive Breakpoints & Fluid Layout
+   ============================================================ */
+
+/* ══════════════════════════════════════
+   LARGE DESKTOP (≤ 1400px)
+══════════════════════════════════════ */
+@media (max-width: 1400px) {
+  .footer__main {
+    grid-template-columns: 1.8fr 1fr 1fr 1fr 1fr;
+  }
+}
+
+/* ══════════════════════════════════════
+   DESKTOP (≤ 1200px)
+══════════════════════════════════════ */
+@media (max-width: 1200px) {
+  .nav {
+    gap: 0;
+  }
+
+  .nav__link {
+    padding: 0.35rem 0.5rem;
+    font-size: 0.78125rem;
+  }
+
+  .header--scrolled {
+    width: min(calc(100% - 1.5rem), 1140px);
+  }
+
+  .hero__inner {
+    gap: var(--space-10);
+  }
+
+  .hero__ring--3 {
+    width: 400px;
+    height: 400px;
+  }
+
+  .process__steps {
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-6);
+  }
+
+  .process__steps::before {
+    display: none;
+  }
+
+  .footer__main {
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: var(--space-8) var(--space-10);
+  }
+
+  .footer__brand {
+    grid-column: 1 / -1;
+  }
+
+  .footer__desc {
+    max-width: 480px;
+  }
+}
+
+/* ══════════════════════════════════════
+   LAPTOP (≤ 1024px)
+══════════════════════════════════════ */
+@media (max-width: 1024px) {
+
+  /* Hide desktop nav, show hamburger */
+  .nav {
+    display: none;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  .mobile-nav {
+    display: flex;
+  }
+
+  /* Hero */
+  .hero__inner {
+    grid-template-columns: 1fr;
+    text-align: center;
+    gap: var(--space-12);
+    display: flex;
+    flex-direction: column;
+  }
+
+  .hero__content {
+    align-items: center;
+    max-width: 600px;
+    margin-inline: auto;
+  }
+
+  .hero__description {
+    max-width: 100%;
+  }
+
+  .hero__actions {
+    justify-content: center;
+  }
+
+  .hero__trust {
+    justify-content: center;
+  }
+
+  .hero__visual {
+    width: 100%;
+    max-width: 500px;
+    margin-inline: auto;
+  }
+
+  /* Value strip */
+  .value-strip__grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-6);
+    max-width: 480px;
+    margin-inline: auto;
+  }
+
+  /* Services */
+  .services-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* Pathways */
+  .pathways__grid {
+    grid-template-columns: 1fr;
+    max-width: 640px;
+    margin-inline: auto;
+  }
+
+  /* Process */
+  .process__layout {
+    grid-template-columns: 1fr;
+    gap: var(--space-8);
+  }
+
+  .process__visual-stats {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  /* Industries */
+  .industries__layout {
+    grid-template-columns: 1fr;
+  }
+
+  .industries__header {
+    /* text-align: left; */
+    align-items: flex-start;
+    /* order: -1; */
+  }
+
+  .industries__header p {
+    margin-inline-start: 0;
+  }
+
+  .industry-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  /* Opportunities */
+  .opportunity-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  /* Candidate Resources */
+  .resources__layout {
+    grid-template-columns: 1fr;
+  }
+
+  .resources__header {
+    max-width: 100%;
+  }
+
+  .resources__header p {
+    max-width: 100%;
+  }
+
+  .resource-card:hover {
+    transform: translateY(-3px);
+    border-color: var(--color-secondary);
+  }
+
+  /* Why FN */
+  .why-fn__inner {
+    grid-template-columns: 1fr;
+    gap: var(--space-10);
+  }
+
+  .why-fn__mini-cards {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  /* About */
+  .about__inner {
+    grid-template-columns: 1fr;
+    gap: var(--space-10);
+  }
+
+  /* Contact */
+  .contact__grid {
+    grid-template-columns: 1fr;
+    max-width: 500px;
+    margin-inline: auto;
+  }
+
+  /* Insights */
+  .insights-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Resources */
+  .resources__grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  /* Feedback */
+  .feedback__grid {
+    grid-template-columns: 1fr;
+    max-width: 600px;
+    margin-inline: auto;
+  }
+
+  /* FAQ */
+  .faq__grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-8);
+  }
+
+  .faq__sidebar {
+    position: static;
+  }
+}
+
+/* ══════════════════════════════════════
+   TABLET (≤ 768px)
+══════════════════════════════════════ */
+@media (max-width: 768px) {
+
+  /* Logo */
+  .logo__img {
+    height: 40px;
+  }
+
+  /* Services */
+  .services-grid {
+    grid-template-columns: 1fr;
+    max-width: 500px;
+    margin-inline: auto;
+  }
+
+  /* Industries */
+  .industry-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* Opportunities */
+  .opportunity-grid {
+    grid-template-columns: 1fr;
+    max-width: 500px;
+    margin-inline: auto;
+  }
+
+  /* Why FN */
+  .why-fn__mini-cards {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  /* Process */
+  .process__steps {
+    grid-template-columns: 1fr;
+    max-width: 360px;
+    margin-inline: auto;
+  }
+
+  /* Contact form row */
+  .contact__form-row {
+    grid-template-columns: 1fr;
+  }
+
+  /* Resources */
+  .resources__grid {
+    grid-template-columns: 1fr;
+    max-width: 500px;
+    margin-inline: auto;
+  }
+
+  /* Footer */
+  .footer__main {
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-8);
+  }
+
+  /* Hero cards adjustments */
+  .hero-card--stat {
+    display: none;
+  }
+
+  .hero__ring--2,
+  .hero__ring--3 {
+    display: none;
+  }
+
+  /* Sections spacing & alignment */
+  .section {
+    padding-block: clamp(var(--space-16, 4rem), 8vw, var(--space-20, 5rem));
+  }
+
+  .section--lg {
+    padding-block: clamp(var(--space-20, 5rem), 10vw, var(--space-24, 6rem));
+  }
+
+  .hero__eyebrow {
+    display: inline-block;
+    white-space: normal;
+    text-align: center;
+    max-width: 100%;
+  }
+
+  .section-heading,
+  .industries__header,
+  .resources__header,
+  .faq__sidebar {
+    text-align: center;
+    align-items: center;
+    margin-inline: auto;
+  }
+
+  .section-heading p,
+  .industries__header p,
+  .resources__header p,
+  .faq__subtitle {
+    margin-inline: auto;
+    text-align: center;
+  }
+
+  .about__content {
+    text-align: center;
+  }
+
+  .about__content h2 {
+    text-align: center;
+  }
+
+  .about__values {
+    text-align: left;
+  }
+
+  .service-card {
+    align-items: center;
+    text-align: center;
+  }
+
+  .final-cta__inner {
+    text-align: center;
+  }
+
+  .hero__trust {
+    flex-direction: column;
+    text-align: center;
+    gap: var(--space-2);
+  }
+
+  .hero__trust-avatars {
+    justify-content: center;
+  }
+
+  /* Split */
+  .split {
+    grid-template-columns: 1fr;
+  }
+
+  /* Grid fallbacks */
+  .grid-2,
+  .grid-3,
+  .grid-4 {
+    grid-template-columns: 1fr;
+  }
+
+  /* Insights */
+  .insights-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Feedback grid for tablet */
+  .feedback__grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ══════════════════════════════════════
+   MOBILE (≤ 640px)
+══════════════════════════════════════ */
+@media (max-width: 640px) {
+
+  /* Container */
+  .container {
+    width: min(100% - 2rem, var(--container-max));
+  }
+
+  /* Header */
+  .header__actions .btn--header {
+    display: none;
+  }
+
+  .hero-visual-card__header {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: var(--space-2);
+  }
+
+  /* Hero */
+  .hero {
+    padding-bottom: clamp(var(--space-12, 3rem), 8vw, var(--space-16, 4rem));
+  }
+
+  .hero__content {
+    align-items: center;
+    max-width: 100%;
+    margin-inline: auto;
+  }
+
+  /* Pathways */
+  .pathway-card {
+    padding: var(--space-6);
+  }
+
+  /* Industry */
+  .industry-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* FAQ Mobile */
+  .faq__answer-box {
+    padding: var(--space-1) var(--space-4) var(--space-4);
+  }
+
+  .faq__question {
+    padding: var(--space-3) var(--space-4);
+    min-height: 56px;
+  }
+
+  .faq__q-text {
+    font-size: var(--text-sm);
+  }
+
+  .faq__num {
+    width: 24px;
+    height: 24px;
+    font-size: 10px;
+  }
+
+  /* Industries mobile */
+  .industry-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* Resources mobile */
+  .resource-card {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: var(--space-3);
+  }
+
+  /* Footer */
+  .footer__main {
+    grid-template-columns: 1fr;
+  }
+
+  .footer__bottom {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-3);
+  }
+
+  /* Final CTA */
+  .final-cta__actions {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  /* Hero actions */
+  .hero__actions {
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+
+  .hero__actions .btn {
+    width: 100%;
+    max-width: 280px;
+    justify-content: center;
+  }
+
+  /* Why FN mini cards */
+  .why-fn__mini-cards {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  /* Mobile nav */
+  .mobile-nav {
+    padding-inline: var(--space-5);
+  }
+}
+
+/* ══════════════════════════════════════
+   SMALL MOBILE (≤ 380px)
+══════════════════════════════════════ */
+@media (max-width: 380px) {
+  .industry-grid {
+    margin-inline: auto;
+  }
+
+  .hero-card--candidate,
+  .hero-card--badge {
+    display: none;
+  }
+
+  .hero__node {
+    width: 90px;
+    height: 90px;
+  }
+}
+
+/* ══════════════════════════════════════
+   PRINT
+══════════════════════════════════════ */
+@media print {
+
+  .header,
+  .mobile-nav,
+  .hamburger,
+  .theme-toggle {
+    display: none !important;
+  }
+
+  .hero {
+    min-height: auto;
+    padding: var(--space-8);
+    background: #fff !important;
+    color: #000 !important;
+  }
+
+  * {
+    animation: none !important;
+    transition: none !important;
+  }
+}

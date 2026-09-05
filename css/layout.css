@@ -1,0 +1,127 @@
+.container {
+  width: min(100% - 2.5rem, var(--container-max));
+  margin-inline: auto;
+}
+
+.container--wide {
+  width: min(100% - 2.5rem, 1400px);
+}
+
+.container--narrow {
+  width: min(100% - 2.5rem, 800px);
+}
+
+.section {
+  padding-block: clamp(2.5rem, 5vw, 4.5rem);
+}
+
+/* Ensure the first section on all pages clears the fixed header with ample breathing room & distinct separation */
+#main-content > section:first-child,
+#main-content > .section:first-child {
+  padding-top: clamp(8.5rem, 12vw, 11rem);
+  position: relative;
+}
+
+/* Subtle top separator glow on subpage first section */
+#main-content > .section:first-child::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--color-border-strong), transparent);
+  pointer-events: none;
+}
+
+.section--sm {
+  padding-block: clamp(1.75rem, 3.5vw, 3rem);
+}
+
+.section--lg {
+  padding-block: clamp(3.5rem, 6vw, 5.5rem);
+}
+
+.section--alt {
+  background-color: var(--color-background-alt);
+}
+
+.section--surface {
+  background: var(--gradient-hero);
+}
+
+.section--dark {
+  background: var(--gradient-cta);
+  color: #f0f4ff;
+}
+
+.grid-2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-8);
+}
+
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-6);
+}
+
+.grid-4 {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-6);
+}
+
+.grid-auto-sm {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: var(--space-6);
+}
+
+.grid-auto-md {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: var(--space-6);
+}
+
+.split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(var(--space-6), 4vw, var(--space-12));
+  align-items: center;
+}
+
+.split--wide {
+  grid-template-columns: 1.1fr 0.9fr;
+}
+
+.split--reverse {
+  direction: rtl;
+}
+
+.split--reverse > * {
+  direction: ltr;
+}
+
+.flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.flex-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.flex-col {
+  display: flex;
+  flex-direction: column;
+}
+
+#page-wrapper {
+  overflow-x: hidden;
+  position: relative;
+}

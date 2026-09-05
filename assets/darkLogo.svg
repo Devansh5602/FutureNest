@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 160" width="100%" height="100%">
+  <defs>
+    <!-- Cyan/Blue glow for the nest arcs -->
+    <filter id="nest-glow-dark" x="-30%" y="-30%" width="160%" height="160%">
+      <feDropShadow dx="0" dy="0" stdDeviation="4" flood-color="#38BDF8" flood-opacity="0.45" />
+    </filter>
+    <!-- Warm amber glow for star -->
+    <filter id="star-glow-dark" x="-30%" y="-30%" width="160%" height="160%">
+      <feDropShadow dx="0" dy="0" stdDeviation="5" flood-color="#FBBF24" flood-opacity="0.6" />
+    </filter>
+  </defs>
+
+  <g transform="translate(10, 0)">
+    <!-- Accents / Sparks above star -->
+    <line x1="38" y1="42" x2="48" y2="30" stroke="#FDE68A" stroke-width="5" stroke-linecap="round" />
+    <line x1="102" y1="42" x2="92" y2="30" stroke="#FDE68A" stroke-width="5" stroke-linecap="round" />
+
+    <!-- Star Symbol with Luminous Filter -->
+    <polygon points="70,36 78,56 100,56 82,69 89,90 70,77 51,90 58,69 40,56 62,56"
+             fill="#FBBF24" filter="url(#star-glow-dark)" />
+
+    <!-- Nest / Smile Arc Ribbons (Adjusted for high luminance contrast) -->
+    <!-- Layer 3: Base glow arc -->
+    <path d="M 45 106 C 53 124, 87 124, 95 106" 
+          fill="none" stroke="#7DD3FC" stroke-width="8" stroke-linecap="round" />
+    <!-- Layer 2: Mid-cyan arc -->
+    <path d="M 36 96 C 46 117, 94 117, 104 96" 
+          fill="none" stroke="#38BDF8" stroke-width="9" stroke-linecap="round" filter="url(#nest-glow-dark)" />
+    <!-- Layer 1: Deep electric royal blue -->
+    <path d="M 24 84 C 40 108, 100 108, 116 84" 
+          fill="none" stroke="#2563EB" stroke-width="10" stroke-linecap="round" />
+
+    <!-- Brand Typography -->
+    <!-- "Future" elevated to Pure White for maximum legibility on dark themes -->
+    <text x="145" y="77" 
+          font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" 
+          font-weight="900" font-size="44" fill="#FFFFFF" letter-spacing="-0.5">Future</text>
+    
+    <!-- "Nest" in Bright Luminous Amber -->
+    <text x="296" y="77" 
+          font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" 
+          font-weight="900" font-size="44" fill="#FBBF24" letter-spacing="-0.5">Nest</text>
+
+    <!-- "P L A C E M E N T S" in Vibrant Sky Blue -->
+    <text x="147" y="106" 
+          font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" 
+          font-weight="800" font-size="14" fill="#38BDF8" letter-spacing="10">PLACEMENTS</text>
+
+    <!-- Tagline in Cool Light Slate -->
+    <text x="147" y="126" 
+          font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" 
+          font-weight="600" font-size="9" fill="#94A3B8" letter-spacing="4.5">WHERE OPPORTUNITY LANDS</text>
+  </g>
+</svg>

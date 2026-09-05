@@ -1,0 +1,146 @@
+/* ── Disable Transitions Helper (Prevents Theme Switch Flicker/Jitter & FOUC) ── */
+html.disable-transitions,
+html.disable-transitions *,
+html.disable-transitions *::before,
+html.disable-transitions *::after {
+  -webkit-transition: none !important;
+  -moz-transition: none !important;
+  -o-transition: none !important;
+  transition: none !important;
+}
+
+/* ── Body ── */
+body {
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  font-weight: var(--weight-regular);
+  color: var(--color-text);
+  background-color: var(--color-background);
+  transition: background-color var(--transition-slow), color var(--transition-slow);
+}
+
+/* ── Headings ── */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
+  font-weight: var(--weight-bold);
+  line-height: var(--leading-tight);
+  color: var(--color-text);
+}
+
+h1 { font-size: var(--text-5xl); }
+h2 { font-size: var(--text-4xl); }
+h3 { font-size: var(--text-2xl); }
+h4 { font-size: var(--text-xl); }
+h5 { font-size: var(--text-lg); }
+h6 { font-size: var(--text-md); }
+
+/* ── Paragraphs ── */
+p {
+  font-size: var(--text-base);
+  line-height: var(--leading-relaxed);
+  color: var(--color-text-secondary);
+}
+
+/* ── Links ── */
+a {
+  transition: color var(--transition-fast), opacity var(--transition-fast);
+}
+
+/* ── Strong ── */
+strong {
+  font-weight: var(--weight-semibold);
+  color: var(--color-text);
+}
+
+/* ── Selection ── */
+::selection {
+  background: rgba(78, 82, 224, 0.2);
+  color: var(--color-text);
+}
+
+/* ── Scrollbar ── */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-background);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-border-strong);
+  border-radius: var(--radius-full);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-text-muted);
+}
+
+/* ── Utility text helpers ── */
+.text-gradient {
+  background: var(--gradient-text);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.text-accent    { color: var(--color-text-accent); }
+.text-muted     { color: var(--color-text-muted); }
+.text-secondary { color: var(--color-text-secondary); }
+
+/* ── Eyebrow label ── */
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-family: var(--font-body);
+  font-size: var(--text-xs);
+  font-weight: var(--weight-semibold);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-accent);
+  background: rgba(34, 211, 238, 0.1);
+  border: 1px solid rgba(34, 211, 238, 0.25);
+  padding: var(--space-1) var(--space-3);
+  border-radius: var(--radius-full);
+}
+
+.eyebrow--indigo {
+  color: var(--color-secondary);
+  background: rgba(78, 82, 224, 0.1);
+  border-color: rgba(78, 82, 224, 0.25);
+}
+
+.section-heading {
+  max-width: 860px;
+}
+
+.section-heading--center {
+  text-align: center;
+  margin-inline: auto;
+}
+
+.section-heading .eyebrow {
+  margin-bottom: var(--space-3);
+}
+
+.section-heading h2 {
+  margin-bottom: var(--space-4);
+}
+
+.section-heading p {
+  font-size: var(--text-md);
+  line-height: var(--leading-relaxed);
+  max-width: 680px;
+}
+
+.section-heading--center p {
+  margin-inline: auto;
+}
+
+.section-heading--right {
+  text-align: right;
+  margin-inline-start: auto;
+}
+
+.section-heading--right p {
+  margin-inline-start: auto;
+}
