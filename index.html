@@ -51,9 +51,11 @@
   <link rel="stylesheet" href="css/sections.css" />
   <link rel="stylesheet" href="css/animations.css" />
   <link rel="stylesheet" href="css/responsive.css" />
-  <link rel="stylesheet" href="css/home.css?v=20261004-icons" />
+  <link rel="stylesheet" href="css/home.css?v=20261004-election" />
+  <link rel="stylesheet" href="css/home-mobile.css?v=2" />
 
   <!-- Theme script runs FIRST to prevent flash -->
+  <link rel="stylesheet" href="css/mobile-navigation.css?v=2" />
   <script src="js/theme.js"></script>
   <script src="js/transitions.js"></script>
 
@@ -95,7 +97,7 @@
   </script>
 </head>
 
-<body class="fn-home">
+<body class="fn-home fn-homepage">
   <a class="fn-skip" href="#main-content">Skip to content</a>
   <div id="page-wrapper">
     <header class="header" id="site-header" role="banner">
@@ -127,7 +129,7 @@
 
     <div class="mobile-nav-backdrop" id="mobile-nav-backdrop"></div>
     <nav class="mobile-nav" id="mobile-nav" aria-label="Mobile navigation">
-      <div class="mobile-nav__content">
+      <div class="mobile-nav__content"><a href="/" class="mobile-nav__brand" aria-label="FutureNest Placements - Home" data-mobile-link><img src="assets/home/logo.png" alt="FutureNest Placements" width="2580" height="780" /></a>
         <div class="mobile-nav__links">
           <a href="/about/" class="mobile-nav__link" data-mobile-link><span class="mobile-nav__link-text">About us</span></a>
           <a href="/services/" class="mobile-nav__link" data-mobile-link><span class="mobile-nav__link-text">Services</span></a>
@@ -136,11 +138,15 @@
         </div>
       </div>
       <div class="mobile-nav__footer">
-        <a href="/contact/" class="btn btn--header btn--full" data-mobile-link>Book Free Call</a>
+        <a href="/contact/" class="btn btn--header btn--full" data-mobile-link>Book Free Call <img src="assets/home/icon-phone.svg" alt="" width="18" height="18" /></a>
       </div>
     </nav>
 
     <main id="main-content" tabindex="-1">
+      <section class="fn-mobile-hero" aria-labelledby="mobile-hero-heading">
+        <img src="assets/home/mobile/hero.png" width="440" height="956" alt="" fetchpriority="high" />
+        <div class="fn-wrap"><h1 id="mobile-hero-heading">Professional Job Placement Services for <strong>YOUR NEXT MOVE</strong></h1><p>Get dedicated support with profile improvement, job applications, interview preparation, and successful placement.</p></div>
+      </section>
       <section class="fn-hero" role="region" aria-roledescription="carousel" aria-label="Featured career opportunities">
         <div class="fn-hero__slide is-active">
           <img class="fn-hero__bg" src="assets/home/hero-network.webp" alt="" width="1892" height="1200" decoding="async" fetchpriority="high" />
@@ -174,7 +180,7 @@
       </section>
 
       <section class="fn-marquee" aria-label="Partner logos">
-        <div class="fn-marquee__track"><div class="fn-marquee__group"><span>FATHOM</span><span>FATHOM</span><span>FATHOM</span><span>FATHOM</span><span>FATHOM</span><span>FATHOM</span><span>FATHOM</span><span>FATHOM</span></div><div class="fn-marquee__group" aria-hidden="true"><span>FATHOM</span><span>FATHOM</span><span>FATHOM</span><span>FATHOM</span><span>FATHOM</span><span>FATHOM</span><span>FATHOM</span><span>FATHOM</span></div></div>
+        <h2 class="fn-mobile-partners">Candidates <strong>PLACED IN</strong></h2><div class="fn-marquee__track"><div class="fn-marquee__group"><span>FATHOM</span><span>FATHOM</span><span>FATHOM</span><span>FATHOM</span><span>FATHOM</span><span>FATHOM</span><span>FATHOM</span><span>FATHOM</span></div><div class="fn-marquee__group" aria-hidden="true"><span>FATHOM</span><span>FATHOM</span><span>FATHOM</span><span>FATHOM</span><span>FATHOM</span><span>FATHOM</span><span>FATHOM</span><span>FATHOM</span></div></div>
       </section>
 
       <section class="fn-about">
@@ -198,11 +204,11 @@
           <div class="fn-why__grid">
             <article class="fn-why__card">
               <span class="fn-pill">For Job Seekers</span>
-              <div class="fn-point"><img class="fn-point__icon" src="assets/home/icon-value-2.svg" alt="" width="48" height="48" loading="lazy" /><div><h3>Personalized Job Matching</h3><p>We align you with roles that fit your skills and support long-term career growth.</p></div></div>
-              <div class="fn-point"><img class="fn-point__icon" src="assets/home/icon-value-2.svg" alt="" width="48" height="48" loading="lazy" /><div><h3>Proactive Interview Outreach</h3><p>Our recruiters actively market your profile to employers to generate interview opportunities.</p></div></div>
-              <div class="fn-point"><img class="fn-point__icon" src="assets/home/icon-value-2.svg" alt="" width="48" height="48" loading="lazy" /><div><h3>End-to-End Placement Support</h3><p>From resume development to final offer, we guide you through every stage of the process.</p></div></div>
-              <div class="fn-point"><img class="fn-point__icon" src="assets/home/icon-value-2.svg" alt="" width="48" height="48" loading="lazy" /><div><h3>Access to Established U.S. Employers</h3><p>Connect with reputable companies across a range of industries nationwide.</p></div></div>
-              <div class="fn-point"><img class="fn-point__icon" src="assets/home/icon-value-2.svg" alt="" width="48" height="48" loading="lazy" /><div><h3>Interview Readiness</h3><p>Mock interviews and structured preparation sessions help you perform with confidence.</p></div></div>
+              <div class="fn-point"><span class="fn-point__icon fn-point__icon--election" aria-hidden="true"><img src="assets/home/icon-election-result.svg" alt="" width="18" height="26" loading="lazy" /></span><div><h3>Personalized Job Matching</h3><p>We align you with roles that fit your skills and support long-term career growth.</p></div></div>
+              <div class="fn-point"><span class="fn-point__icon fn-point__icon--election" aria-hidden="true"><img src="assets/home/icon-election-result.svg" alt="" width="18" height="26" loading="lazy" /></span><div><h3>Proactive Interview Outreach</h3><p>Our recruiters actively market your profile to employers to generate interview opportunities.</p></div></div>
+              <div class="fn-point"><span class="fn-point__icon fn-point__icon--election" aria-hidden="true"><img src="assets/home/icon-election-result.svg" alt="" width="18" height="26" loading="lazy" /></span><div><h3>End-to-End Placement Support</h3><p>From resume development to final offer, we guide you through every stage of the process.</p></div></div>
+              <div class="fn-point"><span class="fn-point__icon fn-point__icon--election" aria-hidden="true"><img src="assets/home/icon-election-result.svg" alt="" width="18" height="26" loading="lazy" /></span><div><h3>Access to Established U.S. Employers</h3><p>Connect with reputable companies across a range of industries nationwide.</p></div></div>
+              <div class="fn-point"><span class="fn-point__icon fn-point__icon--election" aria-hidden="true"><img src="assets/home/icon-election-result.svg" alt="" width="18" height="26" loading="lazy" /></span><div><h3>Interview Readiness</h3><p>Mock interviews and structured preparation sessions help you perform with confidence.</p></div></div>
             </article>
             <article class="fn-why__card fn-why__card--center">
               <span class="fn-pill">What Makes FutureNest Different</span>
@@ -214,11 +220,11 @@
             </article>
             <article class="fn-why__card">
               <span class="fn-pill">For Employer</span>
-              <div class="fn-point"><img class="fn-point__icon" src="assets/home/icon-value-2.svg" alt="" width="48" height="48" loading="lazy" /><div><h3>Industry-Focused Hiring</h3><p>We take time to understand your sector and deliver candidates who fit your technical and cultural needs.</p></div></div>
-              <div class="fn-point"><img class="fn-point__icon" src="assets/home/icon-value-2.svg" alt="" width="48" height="48" loading="lazy" /><div><h3>Pre-Screened Talent</h3><p>Every candidate is evaluated for skills and qualifications before reaching your team, saving you valuable time.</p></div></div>
-              <div class="fn-point"><img class="fn-point__icon" src="assets/home/icon-value-2.svg" alt="" width="48" height="48" loading="lazy" /><div><h3>Accelerated Hiring Timelines</h3><p>Our structured, deadline-driven process helps reduce time-to-hire without compromising quality.</p></div></div>
-              <div class="fn-point"><img class="fn-point__icon" src="assets/home/icon-value-2.svg" alt="" width="48" height="48" loading="lazy" /><div><h3>Flexible Workforce Solutions</h3><p>From permanent placements to staffing and talent acquisition support, we adapt to your hiring needs.</p></div></div>
-              <div class="fn-point"><img class="fn-point__icon" src="assets/home/icon-value-2.svg" alt="" width="48" height="48" loading="lazy" /><div><h3>Compliance &amp; Payroll Support</h3><p>We manage background checks, payroll, and tax administration so your onboarding stays smooth and compliant.</p></div></div>
+              <div class="fn-point"><span class="fn-point__icon fn-point__icon--election" aria-hidden="true"><img src="assets/home/icon-election-result.svg" alt="" width="18" height="26" loading="lazy" /></span><div><h3>Industry-Focused Hiring</h3><p>We take time to understand your sector and deliver candidates who fit your technical and cultural needs.</p></div></div>
+              <div class="fn-point"><span class="fn-point__icon fn-point__icon--election" aria-hidden="true"><img src="assets/home/icon-election-result.svg" alt="" width="18" height="26" loading="lazy" /></span><div><h3>Pre-Screened Talent</h3><p>Every candidate is evaluated for skills and qualifications before reaching your team, saving you valuable time.</p></div></div>
+              <div class="fn-point"><span class="fn-point__icon fn-point__icon--election" aria-hidden="true"><img src="assets/home/icon-election-result.svg" alt="" width="18" height="26" loading="lazy" /></span><div><h3>Accelerated Hiring Timelines</h3><p>Our structured, deadline-driven process helps reduce time-to-hire without compromising quality.</p></div></div>
+              <div class="fn-point"><span class="fn-point__icon fn-point__icon--election" aria-hidden="true"><img src="assets/home/icon-election-result.svg" alt="" width="18" height="26" loading="lazy" /></span><div><h3>Flexible Workforce Solutions</h3><p>From permanent placements to staffing and talent acquisition support, we adapt to your hiring needs.</p></div></div>
+              <div class="fn-point"><span class="fn-point__icon fn-point__icon--election" aria-hidden="true"><img src="assets/home/icon-election-result.svg" alt="" width="18" height="26" loading="lazy" /></span><div><h3>Compliance &amp; Payroll Support</h3><p>We manage background checks, payroll, and tax administration so your onboarding stays smooth and compliant.</p></div></div>
             </article>
           </div>
         </div>
@@ -231,12 +237,12 @@
             <p>FutureNest Placement is a talent solutions company USA job seekers and employers trust, built on a simple idea: talented people shouldn't struggle to find the right opportunities, and companies should connect with the right people without the usual hiring chaos.</p>
           </div>
           <div class="fn-svc-grid">
-            <a class="fn-svc fn-svc--wide" href="/services/"><img class="fn-svc__image" src="assets/home/service-placement.webp" alt="" loading="lazy" decoding="async" width="1536" height="1024" /><div class="fn-svc__body"><h3>Job Placement</h3><p>Helping professionals land meaningful full-time roles with end to end services that turn jobs into long-term careers.</p></div><img class="fn-svc__arrow" src="assets/home/icon-arrow.svg" alt="" /></a>
-            <a class="fn-svc fn-svc--wide" href="/services/"><img class="fn-svc__image" src="assets/home/service-recruitment.webp" alt="" loading="lazy" decoding="async" width="1536" height="1024" /><div class="fn-svc__body"><h3>Recruitment &amp; Staffing</h3><p>Connecting businesses with skilled professionals who actually fit the role and the team.</p></div><img class="fn-svc__arrow" src="assets/home/icon-arrow.svg" alt="" /></a>
-            <a class="fn-svc" href="/services/"><img class="fn-svc__image" src="assets/home/service-talent.webp" alt="" loading="lazy" decoding="async" width="1448" height="1086" /><div class="fn-svc__body"><h3>Talent Acquisition</h3><p>Strategic hiring support to build long-term, high-performing teams.</p></div><img class="fn-svc__arrow" src="assets/home/icon-arrow.svg" alt="" /></a>
-            <a class="fn-svc" href="/services/"><img class="fn-svc__image" src="assets/home/service-verification.webp" alt="" loading="lazy" decoding="async" width="1448" height="1086" /><div class="fn-svc__body"><h3>Background Verification</h3><p>Comprehensive checks to ensure trust, compliance, and reliability.</p></div><img class="fn-svc__arrow" src="assets/home/icon-arrow.svg" alt="" /></a>
-            <a class="fn-svc" href="/services/"><img class="fn-svc__image" src="assets/home/service-training.webp" alt="" loading="lazy" decoding="async" width="1448" height="1086" /><div class="fn-svc__body"><h3>IT Training</h3><p>Training that prepares candidates for real-world tech careers.</p></div><img class="fn-svc__arrow" src="assets/home/icon-arrow.svg" alt="" /></a>
-            <a class="fn-svc" href="/services/"><img class="fn-svc__image" src="assets/home/service-accounting.webp" alt="" loading="lazy" decoding="async" width="1024" height="1536" /><div class="fn-svc__body"><h3>Accounting &amp; Taxes</h3><p>Seamless payroll processing with full tax and regulatory compliance.</p></div><img class="fn-svc__arrow" src="assets/home/icon-arrow.svg" alt="" /></a>
+            <a class="fn-svc fn-svc--wide" href="/services/"><picture><source media="(max-width:600px)" srcset="assets/home/mobile/service-placement.png" /><img class="fn-svc__image" src="assets/home/service-placement.webp" alt="" loading="lazy" decoding="async" width="1536" height="1024" /></picture><div class="fn-svc__body"><h3>Job Placement</h3><p>Helping professionals land meaningful full-time roles with end to end services that turn jobs into long-term careers.</p></div><img class="fn-svc__arrow" src="assets/home/icon-arrow.svg" alt="" /></a>
+            <a class="fn-svc fn-svc--wide" href="/services/"><picture><source media="(max-width:600px)" srcset="assets/home/mobile/service-recruitment.png" /><img class="fn-svc__image" src="assets/home/service-recruitment.webp" alt="" loading="lazy" decoding="async" width="1536" height="1024" /></picture><div class="fn-svc__body"><h3>Recruitment &amp; Staffing</h3><p>Connecting businesses with skilled professionals who actually fit the role and the team.</p></div><img class="fn-svc__arrow" src="assets/home/icon-arrow.svg" alt="" /></a>
+            <a class="fn-svc" href="/services/"><picture><source media="(max-width:600px)" srcset="assets/home/mobile/service-talent.png" /><img class="fn-svc__image" src="assets/home/service-talent.webp" alt="" loading="lazy" decoding="async" width="1448" height="1086" /></picture><div class="fn-svc__body"><h3>Talent Acquisition</h3><p>Strategic hiring support to build long-term, high-performing teams.</p></div><img class="fn-svc__arrow" src="assets/home/icon-arrow.svg" alt="" /></a>
+            <a class="fn-svc" href="/services/"><picture><source media="(max-width:600px)" srcset="assets/home/mobile/service-verification.png" /><img class="fn-svc__image" src="assets/home/service-verification.webp" alt="" loading="lazy" decoding="async" width="1448" height="1086" /></picture><div class="fn-svc__body"><h3>Background Verification</h3><p>Comprehensive checks to ensure trust, compliance, and reliability.</p></div><img class="fn-svc__arrow" src="assets/home/icon-arrow.svg" alt="" /></a>
+            <a class="fn-svc" href="/services/"><picture><source media="(max-width:600px)" srcset="assets/home/mobile/service-training.png" /><img class="fn-svc__image" src="assets/home/service-training.webp" alt="" loading="lazy" decoding="async" width="1448" height="1086" /></picture><div class="fn-svc__body"><h3>IT Training</h3><p>Training that prepares candidates for real-world tech careers.</p></div><img class="fn-svc__arrow" src="assets/home/icon-arrow.svg" alt="" /></a>
+            <a class="fn-svc" href="/services/"><picture><source media="(max-width:600px)" srcset="assets/home/mobile/service-accounting.png" /><img class="fn-svc__image" src="assets/home/service-accounting.webp" alt="" loading="lazy" decoding="async" width="1024" height="1536" /></picture><div class="fn-svc__body"><h3>Accounting &amp; Taxes</h3><p>Seamless payroll processing with full tax and regulatory compliance.</p></div><img class="fn-svc__arrow" src="assets/home/icon-arrow.svg" alt="" /></a>
           </div>
         </div>
       </section>
@@ -263,7 +269,7 @@
         <div class="fn-wrap">
           <h2><strong>Real Success</strong> Real Stories</h2>
           <p>From career backburn to global opportunities — hear from our candidates who turned ambition into achievement.</p>
-          <div class="fn-story-grid">
+          <div class="fn-story-grid" tabindex="0" role="region" aria-label="Candidate success stories">
             <article class="fn-story fn-story--tall"><img class="fn-story__portrait" src="assets/home/story-hima.webp" alt="" loading="lazy" width="1920" height="1080" /><div class="fn-story__caption"><h3>Hima Bindu Bagam</h3><p>Senior Data Analyst</p><p class="fn-stars">★★★★★</p></div></article>
             <article class="fn-story"><img class="fn-story__portrait" src="assets/home/story-nithin-a.webp" alt="" loading="lazy" width="1920" height="1081" /><div class="fn-story__caption"><h3>Nithin Reddy</h3><p>Senior Project Manager</p><p class="fn-stars">★★★★★</p></div></article>
             <article class="fn-story"><img class="fn-story__portrait" src="assets/home/story-nithin-b.webp" alt="" loading="lazy" width="1920" height="1081" /><div class="fn-story__caption"><h3>Nithin Reddy</h3><p>Senior Project Manager</p><p class="fn-stars">★★★★★</p></div></article>
@@ -297,7 +303,7 @@
         </div>
       </section>
 
-      <section class="fn-cta"><img class="fn-cta__portrait" src="assets/home/cta-advisor.webp" alt="" loading="lazy" width="934" height="895" />
+      <section class="fn-cta"><picture><source media="(max-width:600px)" srcset="assets/home/mobile/cta-advisor.png" /><img class="fn-cta__portrait" src="assets/home/cta-advisor.webp" alt="" loading="lazy" width="934" height="895" /></picture>
         <div class="fn-wrap">
           <h2>Job Search Stress or Hiring Challenges? <strong>We're here to help.</strong></h2>
           <div class="fn-cta__actions">
@@ -362,7 +368,7 @@
 
   <!-- JavaScript -->
 
-  <script src="js/home.js?v=20261004-responsive2"></script>
+  <script src="js/home.js?v=20261004-mobile"></script>
   <script src="js/navigation.js"></script>
   <script src="js/main.js"></script>
 

@@ -1,0 +1,58 @@
+.ab-track-controls { display:none; }
+@media(max-width:600px) {
+ .fn-about-page .fn-wrap { width:calc(100% - 32px); }
+ .fn-about-page .ab-hero { height:217vw; min-height:660px; max-height:956px; padding-bottom:60px; }
+ .fn-about-page .ab-photo--hero { object-position:center; }
+ .fn-about-page .ab-hero h1 { font-size:clamp(28px,7.7vw,36px); }
+ .fn-about-page .ab-hero h1 br { display:none; }
+ .fn-about-page .ab-hero h1 strong { display:block; }
+ .fn-about-page .ab-hero p { font-size:12px; line-height:1.65; }
+ .ab-intro { padding-block:60px; text-align:center; }
+ .ab-intro h2 { font-size:25px; }
+ .ab-intro p { font-size:13px; }
+ .ab-origin { min-height:805px; height:183vw; max-height:1000px; }
+ .ab-photo--origin { object-position:center; }
+ .ab-origin__wrap { padding-block:48px; }
+ .ab-origin h2 { font-size:24px; }
+ .ab-origin p { font-size:13px; }
+ .ab-origin li { font-size:14px; }
+ .ab-origin::after { background:linear-gradient(0deg,#101719c9,transparent 85%); }
+ .ab-statement { padding:42px 15%; }
+ .ab-statement p { letter-spacing:.5em; font-size:13px; }
+ .ab-services { padding-top:60px; }
+ .ab-service-grid li { border-radius:3px; min-height:94px; font-size:13px; padding:16px 12px; }
+ .ab-section-head h2 { font-size:24px; }
+ .ab-section-head p { font-size:13px; }
+ .ab-track-viewport { overflow-x:auto; scrollbar-width:none; touch-action:pan-x pan-y; scroll-snap-type:x proximity; }
+ .ab-track-viewport::-webkit-scrollbar { display:none; }
+ .ab-track-viewport:focus-visible { outline:3px solid var(--fn-gold); outline-offset:4px; }
+ .ab-track-grid { width:270%; grid-template-columns:repeat(12,minmax(0,1fr)); grid-template-rows:repeat(2,210px); gap:14px; }
+ .ab-track { grid-column:span 3; grid-row:auto; aspect-ratio:auto; scroll-snap-align:start; }
+ .ab-track--ai { grid-row:span 2; }
+ .ab-track--supply { grid-column:span 4; }
+ .ab-track--finance { grid-column:span 5; }
+ .ab-track span { font-size:13px; padding:12px; }
+ .ab-track-controls { display:flex; justify-content:center; gap:4px; margin-top:24px; }
+ .ab-track-controls button { min-width:44px; min-height:44px; background:#14315c; color:white; border-radius:8px; font-size:24px; }
+ .ab-track-controls button:disabled { opacity:.4; }
+ .ab-faq { padding-top:70px; padding-bottom:200px; }
+ .ab-faq h2 { font-size:24px; }
+ .ab-faq h2 br { display:none; }
+ .ab-faq__intro p { font-size:13px; }
+ .ab-faq__item { border-radius:5px; }
+ .ab-faq__item summary { padding:14px 12px; font-size:12px; gap:10px; }
+ .ab-faq__answer p { font-size:13px; }
+ .fn-about-page .fn-cta { background:#eda720; padding:0 0 52px; }
+ .fn-about-page .fn-cta picture { display:flow-root; }
+ .fn-about-page .fn-cta__portrait { position:relative; z-index:0; display:block; right:auto; bottom:auto; width:100%; height:auto; margin-top:-34vw; }
+ .fn-about-page .fn-cta h2 { width:100%; font-size:26px; margin-top:22px; }
+ .fn-about-page .fn-cta__actions { max-width:none; gap:10px; margin-top:34px; }
+ .fn-about-page .fn-cta .btn--header,.fn-about-page .fn-cta__ghost { padding-inline:18px; font-size:13px; }
+ .fn-about-page .fn-footer__grid { display:flex; flex-direction:column; gap:36px; }
+ .fn-about-page .fn-footer__grid>div:last-child { order:-1; border-bottom:1px solid #ffffff30; padding-bottom:32px; }
+}
+@media(max-width:380px) {
+ .ab-track-grid { width:300%; grid-template-rows:repeat(2,180px); }
+ .fn-about-page .fn-cta__actions>a { flex:1 1 140px; }
+ .ab-service-grid li { overflow-wrap:anywhere; }
+}

@@ -336,3 +336,6 @@
 .fn-home .hamburger[aria-expanded='true'] .hamburger__line:nth-child(3) { transform:translateY(-0.4375rem) rotate(-45deg); }
 .fn-home .mobile-nav__link-icon { width:var(--fn-icon-sm); height:var(--fn-icon-sm); flex:none; }
 .fn-home .mobile-nav__help-link svg { width:0.9375rem; height:0.9375rem; }
+
+.fn-point__icon--election { display:grid; place-items:center; background:#e9e8f2; border-radius:.375rem; }
+.fn-point__icon--election img { width:1.125rem; height:1.625rem; object-fit:contain; }

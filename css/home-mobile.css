@@ -1,0 +1,90 @@
+/* Mobile Home composition from the supplied 440px prototype. */
+.fn-mobile-hero,.fn-mobile-partners { display:none; }
+@media(max-width:600px) {
+ .fn-homepage .header { width:100%; left:0; right:0; border-radius:0; }
+ .fn-homepage .header .container { width:calc(100% - 32px); }
+ .fn-homepage .logo__img { width:160px; }
+ .fn-homepage .hamburger { background:#f7f7f9; border-radius:6px; }
+ .fn-homepage .fn-wrap { width:calc(100% - 32px); }
+ .fn-homepage .fn-hero { display:none; }
+ #main-content>.fn-mobile-hero:first-child { padding-top:0; }
+ .fn-mobile-hero { display:flex; position:relative; isolation:isolate; align-items:flex-end; min-height:650px; height:174vw; max-height:956px; color:white; padding-bottom:64px; }
+ .fn-mobile-hero>img { position:absolute; z-index:-1; inset:0; width:100%; height:100%; object-fit:cover; }
+ .fn-mobile-hero .fn-wrap { text-align:center; }
+ .fn-mobile-hero h1 { font-size:clamp(28px,7.7vw,36px); line-height:1.3; font-weight:500; }
+ .fn-mobile-hero h1 strong { display:block; color:var(--fn-gold); font-weight:800; margin-top:8px; }
+ .fn-mobile-hero p { margin:22px auto 0; font-size:12px; line-height:1.65; max-width:37ch; }
+ .fn-mobile-partners { display:block; text-align:center; font-size:22px; margin-bottom:45px; }
+ .fn-homepage .fn-marquee { padding-block:50px; }
+ .fn-homepage .fn-about__split { text-align:center; gap:20px; }
+ .fn-homepage .fn-about__copy { font-size:13px; }
+ .fn-homepage .fn-values { margin-top:32px; }
+ .fn-homepage .fn-value { min-height:130px; border-radius:12px; }
+ .fn-homepage .fn-why__card--center { order:0; }
+ .fn-homepage .fn-why__card { border-radius:12px; padding:44px 24px 32px; }
+ .fn-homepage .fn-pill { left:50%; transform:translate(-50%,-50%); }
+ .fn-homepage .fn-point h3 { font-size:14px; }
+ .fn-homepage .fn-point p { font-size:13px; }
+ .fn-homepage .fn-point__icon { width:36px; height:36px; }
+ .fn-homepage .fn-svc-grid { grid-template-columns:repeat(2,minmax(0,1fr)); gap:10px; }
+ .fn-homepage .fn-svc,.fn-homepage .fn-svc--wide { grid-column:auto; min-height:0; aspect-ratio:200/191; border-radius:10px; }
+ .fn-homepage .fn-svc__body,.fn-homepage .fn-svc--wide .fn-svc__body,.fn-homepage .fn-svc:nth-child(2) .fn-svc__body { padding:12px 10px; max-width:100%; }
+ .fn-homepage .fn-svc h3 { font-size:clamp(12px,3.4vw,18px); margin-bottom:5px; line-height:1.15; }
+ .fn-homepage .fn-svc p { font-size:clamp(9px,2.35vw,12px); max-width:85%; line-height:1.25; }
+ .fn-homepage .fn-svc:nth-child(1) p { max-width:55%; }
+ .fn-homepage .fn-svc:nth-child(2)::after { display:none; }
+ .fn-homepage .fn-svc__arrow { width:26px; height:26px; left:10px; bottom:10px; }
+ .fn-homepage .fn-live { background-image:url('../assets/home/mobile/placement-background.png'); background-position:center; min-height:580px; padding-block:45px; }
+ .fn-homepage .fn-live::before { background:none; }
+ .fn-homepage .fn-live__head { margin-left:16px; padding-right:16px; margin-bottom:32px; }
+ .fn-homepage .fn-live__head h2 { font-size:24px; }
+ .fn-homepage .fn-live__row { padding-left:16px; scroll-padding-left:16px; gap:12px; }
+ .fn-homepage .fn-offer { flex-basis:55%; padding:16px; border-radius:12px; }
+ .fn-homepage .fn-offer__meta { font-size:9px; gap:4px; }
+ .fn-homepage .fn-offer h3 { font-size:22px; margin-top:16px; }
+ .fn-homepage .fn-offer__role { font-size:11px; }
+ .fn-homepage .fn-chips span { font-size:10px; padding:3px 6px; }
+ .fn-homepage .fn-offer__photo { height:145px; }
+ .fn-homepage .fn-offer__company { font-size:25px; }
+ .fn-homepage .fn-story-grid { grid-template-columns:none; grid-auto-columns:82%; grid-auto-flow:column; grid-template-rows:repeat(2,220px); overflow-x:auto; scroll-snap-type:x mandatory; gap:12px; padding-bottom:12px; text-align:left; }
+ .fn-homepage .fn-story { aspect-ratio:auto; grid-column:auto; scroll-snap-align:start; }
+ .fn-homepage .fn-story--tall { grid-row:span 2; }
+ .fn-homepage .fn-process { padding-bottom:200px; }
+ .fn-homepage .fn-process__grid { border-radius:0 0 16px 16px; }
+ .fn-homepage .fn-process__col { padding:36px 26px; }
+ .fn-homepage .fn-step h4 { font-size:14px; }
+ .fn-homepage .fn-step p { font-size:12px; }
+ .fn-homepage .fn-cta { background:#eda720; padding:0 0 52px; }
+ .fn-homepage .fn-cta__portrait { position:relative; z-index:0; display:block; right:auto; bottom:auto; width:100%; height:auto; margin-top:-34vw; }
+ .fn-homepage .fn-cta h2 { width:100%; font-size:26px; margin-top:22px; }
+ .fn-homepage .fn-cta__actions { max-width:none; gap:10px; margin-top:34px; }
+ .fn-homepage .fn-cta .btn--header,.fn-homepage .fn-cta__ghost { padding-inline:18px; font-size:13px; }
+ .fn-homepage .fn-footer__grid { display:flex; flex-direction:column; gap:36px; }
+ .fn-homepage .fn-footer__grid>div:last-child { order:-1; border-bottom:1px solid #ffffff30; padding-bottom:32px; }
+}
+
+@media(max-width:600px) {
+ .fn-homepage .fn-point>div { min-width:0; overflow-wrap:anywhere; }
+ .fn-homepage .fn-pill { max-width:calc(100% - 24px); white-space:normal; text-align:center; }
+ .fn-homepage .fn-story-grid { touch-action:pan-x pan-y; }
+ .fn-homepage .fn-story-grid:focus-visible { outline:3px solid var(--fn-gold); outline-offset:4px; }
+ .fn-homepage .fn-cta picture { display:flow-root; }
+}
+/* At narrow phone widths, move copy above the artwork instead of shrinking or hiding it. */
+@media(max-width:380px) {
+ .fn-homepage .fn-svc { display:flex; flex-direction:column; aspect-ratio:auto; }
+ .fn-homepage .fn-svc picture { display:block; order:2; }
+ .fn-homepage .fn-svc__image { position:static; display:block; width:100%; height:auto; aspect-ratio:200/191; object-fit:cover; }
+ .fn-homepage .fn-svc__body,.fn-homepage .fn-svc--wide .fn-svc__body { order:1; flex:1; padding:14px 10px; }
+ .fn-homepage .fn-svc h3 { font-size:15px; overflow-wrap:anywhere; }
+ .fn-homepage .fn-svc p,.fn-homepage .fn-svc:nth-child(1) p { font-size:12px; max-width:100%; line-height:1.4; }
+ .fn-homepage .fn-svc:nth-child(1) { background:#e1f3ff; }
+ .fn-homepage .fn-svc:nth-child(2) { background:#fff8eb; }
+ .fn-homepage .fn-svc:nth-child(3) { background:#e1f3e8; }
+ .fn-homepage .fn-svc:nth-child(4) { background:#f0e6ff; }
+ .fn-homepage .fn-svc:nth-child(5) { background:#ffe4e2; }
+ .fn-homepage .fn-svc:nth-child(6) { background:#e4f2ff; }
+ .fn-homepage .fn-offer { flex-basis:72%; }
+ .fn-homepage .fn-cta__actions>a { flex:1 1 140px; }
+ .fn-homepage .fn-process__col { padding-inline:18px; }
+}
