@@ -9,13 +9,11 @@
 
     const reduced = matchMedia('(prefers-reduced-motion: reduce)');
     const slides = Array.from(hero.querySelectorAll('.fn-hero__slide'));
-    const pause = hero.querySelector('[data-hero="pause"]');
     const arrows = Array.from(hero.querySelectorAll('[data-hero="prev"], [data-hero="next"]'));
     const status = document.getElementById('hero-status');
     let index = 0;
     let timer;
     let moving = false;
-    let userPaused = reduced.matches;
     let focusPaused = false;
     let hoverPaused = false;
     let heroVisible = true;
@@ -34,15 +32,9 @@
       });
     }
 
-    function updatePauseButton() {
-      pause.setAttribute('aria-pressed', String(userPaused));
-      pause.setAttribute('aria-label', userPaused ? 'Play slideshow' : 'Pause slideshow');
-      pause.firstElementChild.textContent = userPaused ? '\u25b6' : '\u275a\u275a';
-    }
-
     function schedule() {
       clearTimeout(timer);
-      if (!moving && !userPaused && !focusPaused && !hoverPaused &&
+      if (!moving && !focusPaused && !hoverPaused &&
           heroVisible && !document.hidden && !reduced.matches) {
         timer = setTimeout(() => show(index + 1, 1, false), 5000);
       }
@@ -92,13 +84,6 @@
       const direction = button.dataset.hero === 'next' ? 1 : -1;
       show(index + direction, direction, true);
     }));
-    pause.addEventListener('click', () => {
-      userPaused = !userPaused;
-      // An explicit Play command takes precedence over the current focus/hover pause.
-      if (!userPaused) { focusPaused = false; hoverPaused = false; }
-      updatePauseButton();
-      schedule();
-    });
     hero.addEventListener('pointerenter', event => {
       if (event.pointerType !== 'touch') { hoverPaused = true; schedule(); }
     });
@@ -135,7 +120,6 @@
     window.addEventListener('pagehide', () => clearTimeout(timer));
     window.addEventListener('pageshow', schedule);
     exposeSlide();
-    updatePauseButton();
 
     // Reveal only when the section enters view; never hide content without an observer.
     if ('IntersectionObserver' in window) {
@@ -148,7 +132,7 @@
           }
         });
       }, { threshold: 0.12, rootMargin: '0px 0px -35px 0px' });
-      document.querySelectorAll('.fn-why__grid, .fn-process__col, .fn-live').forEach(section => {
+      document.querySelectorAll('.fn-process__col, .fn-live').forEach(section => {
         section.querySelectorAll('.fn-step').forEach((step, i) => {
           step.style.setProperty('--step-delay', (i * 110) + 'ms');
         });
@@ -163,15 +147,34 @@
 
     reduced.addEventListener('change', () => {
       if (reduced.matches) {
-        userPaused = true;
         animations.forEach(animation => animation.finish());
         document.querySelectorAll('.fn-why__grid, .fn-process__col, .fn-live')
           .forEach(section => section.classList.add('is-revealed'));
       }
-      updatePauseButton();
       schedule();
     });
     schedule();
+
+    // Scroll progress makes the side panels enter and exit in either direction.
+    const benefits = document.querySelector('.fn-why__grid');
+    let benefitsFrame;
+    function updateBenefits() {
+      benefitsFrame = null;
+      const box = benefits.getBoundingClientRect();
+      const enter = (box.top - innerHeight * .45) / (innerHeight * .5);
+      const leave = (innerHeight * .65 - box.bottom) / (innerHeight * .5);
+      const progress = reduced.matches ? 0 : Math.max(0, Math.min(1, Math.max(enter, leave)));
+      benefits.style.setProperty('--why-offset', (progress * 115) + '%');
+    }
+    function queueBenefits() {
+      if (!benefitsFrame) benefitsFrame = requestAnimationFrame(updateBenefits);
+    }
+    if (benefits) {
+      window.addEventListener('scroll', queueBenefits, { passive: true });
+      window.addEventListener('resize', queueBenefits, { passive: true });
+      reduced.addEventListener('change', queueBenefits);
+      updateBenefits();
+    }
 
     // Native scrolling supports touch/trackpads. Arrows always move one complete card.
     const row = document.getElementById('live-row');
