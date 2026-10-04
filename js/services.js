@@ -37,7 +37,8 @@
       stacks.forEach(stack => {
         Array.from(stack.children).forEach((card, index) => {
           // Tall cards scroll fully into view before pinning; later cards cover earlier ones.
-          const top = Math.min(110 + index * 20, innerHeight - card.offsetHeight - 24);
+          const scale = parseFloat(getComputedStyle(document.documentElement).fontSize) / 16;
+          const top = Math.min((110 + index * 20) * scale, innerHeight - card.offsetHeight - 24 * scale);
           card.style.setProperty('--stack-top', top + 'px');
         });
         stack.classList.toggle('is-stacking', !reduced.matches);
