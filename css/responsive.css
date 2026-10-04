@@ -19,13 +19,17 @@
     gap: 0;
   }
 
+  .nav {
+    gap: 1.25rem;
+  }
+
   .nav__link {
-    padding: 0.35rem 0.5rem;
-    font-size: 0.78125rem;
+    padding: 0.35rem 0;
+    font-size: 1rem;
   }
 
   .header--scrolled {
-    width: min(calc(100% - 1.5rem), 1140px);
+    width: 100%;
   }
 
   .hero__inner {

@@ -1,0 +1,33 @@
+/* fn-tokens.css — FutureNest v2 tokens (from Figma). Loaded instead of variables.css on migrated pages. */
+:root {
+  --fn-navy: #0f2750;
+  --fn-navy-700: #16356b;
+  --fn-amber: #f5a623;
+  --fn-amber-600: #d98a0b;
+  --fn-brown: #7a4a06;
+  --fn-cream: #fef4e4;
+  --fn-cream-2: #fde9cb;
+  --fn-slate: #eaeef6;
+  --fn-slate-2: #dde3f0;
+  --fn-ink: #1b1b1b;
+  --fn-footer: #1c1c1c;
+  --fn-text: #3b3f4a;
+  --fn-muted: #6b7280;
+  --fn-line: #e5e7eb;
+  --fn-green: #16a34a;
+
+  --font: 'Outfit', system-ui, sans-serif;
+  --r-sm: 10px;
+  --r-md: 18px;
+  --r-lg: 24px;
+  --r-pill: 999px;
+  --shadow-card: 0 10px 40px -12px rgba(15, 39, 80, 0.14);
+  --ease: cubic-bezier(0.4, 0, 0.2, 1);
+  --container: 1240px;
+
+  /* compat: names reset.css still reads */
+  --color-accent: var(--fn-amber);
+  --color-border: var(--fn-line);
+  --radius-xs: 4px;
+  --leading-normal: 1.6;
+}

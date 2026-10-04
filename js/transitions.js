@@ -17,6 +17,8 @@ document.addEventListener('DOMContentLoaded', () => {
             return;
         }
         
+        if (/^\/(?:about|contact|refer|services)(?:\/|$)/.test(window.location.pathname) || /^\/(?:about|contact|refer|services)(?:\/|$)/.test(href)) return;
+        if (window.location.pathname === '/' || window.location.pathname === '/index.html' || href === '/' || href === '/index.html') return;
         e.preventDefault();
         
         // Add fade out animation
