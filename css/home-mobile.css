@@ -63,6 +63,20 @@
  .fn-homepage .fn-point>div { min-width:0; overflow-wrap:anywhere; }
  .fn-homepage .fn-pill { max-width:calc(100% - 24px); white-space:normal; text-align:center; }
  .fn-homepage .fn-cta picture { display:flow-root; }
+ .fn-homepage .fn-live__controls {
+    width: 100%;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 24px;
+  }
+  .fn-homepage .fn-live__controls button { width: 36px; height: 36px; }
+  .fn-homepage .fn-live__controls button:disabled { opacity: 1; color: #687584; }
+  .fn-homepage .fn-live__head h2 { font-size: 24px; }
+  .fn-homepage .fn-live__row {
+    padding-left: 16px;
+    scroll-padding-left: 16px;
+    gap: 12px;
+  }
 }
 
 @media(max-width:380px) {
