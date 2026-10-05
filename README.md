@@ -36,7 +36,7 @@ Each route is a complete HTML document. Load shared styles before page styles, t
 
 The header and footer remain ordinary HTML in each entry point, so they render without JavaScript. Keep their navigation and contact information consistent when editing. Shared interaction code belongs in `js/site.js` or `js/components/`, not another page's script.
 
-Desktop content is capped at 1200px. The shared `--fn-layout-width` token caps viewport-based type and spacing at the 1440px design scale, so larger screens add surrounding space instead of magnifying content. Home and Services use the same story markup, shared stylesheet/script, and `assets/shared/stories/` mobile images.
+Desktop containers grow smoothly from 1200px at a 1440px viewport to 1380px at 1920px, 1620px at 2560px, and at most 1920px on ultrawide displays. Reading-heavy sections and image cards use tighter limits. The shared `--fn-layout-width` token caps viewport-based type and spacing at the 1440px design scale, so wider layouts do not magnify typography or controls. Home and Services use the same story markup, shared stylesheet/script, and `assets/shared/stories/` mobile images.
 
 Use `<picture>` for mobile image variants, keep assets local, and preserve image dimensions to avoid layout shifts. Interactive additions must work with keyboard input and respect `prefers-reduced-motion`.
 
@@ -63,7 +63,7 @@ With the preview server running:
 node scripts/check-browser.cjs
 ```
 
-This checks all five routes at 320, 440, 768, 1024, 1440, and 1920 pixels, plus service tabs, FAQs, carousels, mobile navigation, browser history, form validation, query-string prefills, and motion preferences. Screenshots are written to the ignored `.preview/` directory.
+This checks all five routes at 320, 440, 768, 1024, 1440, 1920, 2560, and 3440 pixels, plus service tabs, FAQs, carousels, mobile navigation, browser history, form validation, query-string prefills, and motion preferences. Screenshots are written to the ignored `.preview/` directory.
 
 Optional environment variables: `BASE_URL` selects another preview server, `CHROME_PATH` selects an installed Chromium browser, and `PLAYWRIGHT_MODULE` selects an existing Playwright installation.
 

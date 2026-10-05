@@ -28,3 +28,7 @@
 @media(prefers-reduced-motion:reduce) {
  .ab-faq__icon { transition:none; }
 }
+
+@media (min-width: 1441px) {
+ .ab-faq { max-width: 90rem; }
+}

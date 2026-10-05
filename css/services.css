@@ -107,3 +107,10 @@
 .fn-services-page .sv-compare__symbol svg { width: 54%; height: 54%; }
 .fn-services-page .fn-live__controls button { display: grid; place-items: center; padding: 0; line-height: 1; }
 .fn-services-page .fn-live__controls svg { width: 20px; height: 20px; }
+
+@media (min-width: 1441px) {
+  .sv-stack { max-width: 90rem; }
+  .sv-solution__grid { max-width: 90rem; gap: 8%; }
+  .sv-compare-grid { width: min(100%, 68rem); }
+  .sv-heading p { max-width: 80ch; }
+}

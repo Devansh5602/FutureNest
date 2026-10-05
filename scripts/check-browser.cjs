@@ -6,7 +6,7 @@ const { chromium } = require(process.env.PLAYWRIGHT_MODULE || 'playwright');
 const baseURL = process.env.BASE_URL || 'http://localhost:8080';
 const output = path.resolve('.preview');
 const routes = ['/', '/about/', '/services/', '/refer/', '/contact/'];
-const widths = [320, 440, 768, 1024, 1440, 1920];
+const widths = [320, 440, 768, 1024, 1440, 1920, 2560, 3440];
 
 async function run() {
   await fs.mkdir(output, { recursive: true });
@@ -78,8 +78,9 @@ async function run() {
           assert.equal(await page.locator('.fn-story__verified').count(), 5);
           assert.equal(await page.locator('.fn-stories__more').getAttribute('href'), '/');
         }
-        if (width === 1920) {
-          assert(await page.locator('.fn-wrap').first().evaluate(element => element.getBoundingClientRect().width <= 1200));
+        if (width >= 1920) {
+          const maximum = Math.min(1920, width * 0.375 + 660);
+          assert(await page.locator('main .fn-wrap:visible').first().evaluate((element, limit) => Math.abs(element.getBoundingClientRect().width - limit) < 1, maximum));
         }
 
         const next = page.locator('[data-live="next"]');

@@ -58,3 +58,7 @@
  .fn-contact-page * { scroll-behavior:auto!important; }
  .ct-field input,.ct-field textarea,.ct-submit { transition:none; }
 }
+
+@media (min-width: 1441px) {
+ .ct-contact { max-width: 90rem; }
+}

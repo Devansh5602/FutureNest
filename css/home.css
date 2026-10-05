@@ -1,5 +1,6 @@
 .fn-home {
   --fn-layout-width:min(100vw, 1440px);
+  --fn-content-max:clamp(75rem, calc(37.5vw + 41.25rem), 120rem);
   --color-text:#383838; --color-text-secondary:#414651; --color-surface:#fff;
   --fn-icon-sm:1.125rem; --fn-icon-md:2.25rem;
   --fn-navy:#14315c; --fn-gold:#f5a623; --fn-ease:cubic-bezier(.22,1,.36,1);
@@ -11,12 +12,12 @@
 .fn-home h2 strong { font-weight:750; }
 .fn-home :is(button,a):focus-visible { outline:0.1875rem solid #c7800a; outline-offset:0.3125rem; }
 .fn-home section { scroll-margin-top:6.875rem; }
-.fn-wrap { width:min(calc(100% - clamp(2.5rem,calc(var(--fn-layout-width) * 0.12),15rem)),75rem); margin-inline:auto; }
+.fn-wrap { width:min(calc(100% - clamp(2.5rem,calc(var(--fn-layout-width) * 0.12),15rem)),var(--fn-content-max)); margin-inline:auto; }
 .fn-sr-only { position:absolute; width:0.0625rem; height:0.0625rem; padding:0; margin:-0.0625rem; overflow:hidden; clip-path:inset(50%); white-space:nowrap; border:0; }
 .fn-skip { position:fixed; top:0.5rem; left:0.5rem; z-index:9999; padding:0.75rem 1.25rem; background:white; color:#14315c; transform:translateY(-150%); }
 .fn-skip:focus { transform:none; }
 
-.fn-home .header { width:min(90%,80rem); left:50%; right:auto; transform:translateX(-50%); border-radius:0 0 1.125rem 1.125rem; }
+.fn-home .header { width:min(90%,calc(var(--fn-content-max) + 5rem)); left:50%; right:auto; transform:translateX(-50%); border-radius:0 0 1.125rem 1.125rem; }
 .fn-home .header .container { width:90%; padding-inline:0; }
 .fn-home .header__inner { min-height:clamp(4.5rem,calc(var(--fn-layout-width) * 0.0527),6.3125rem); }
 .fn-home .logo__img { width:clamp(7.1875rem,calc(var(--fn-layout-width) * 0.082),9.8125rem); height:auto; }
@@ -307,3 +308,15 @@
 
 .fn-point__icon--election { display:grid; place-items:center; background:#e9e8f2; border-radius:.375rem; }
 .fn-point__icon--election img { width:1.125rem; height:1.625rem; object-fit:contain; }
+
+@media (min-width: 1441px) {
+  .fn-home .header .container { width: calc(100% - 5rem); }
+  .fn-hero__copy { width: var(--fn-content-max); margin-inline: auto; }
+  .fn-hero__title { max-width: 22ch; }
+  .fn-hero__controls { right: max(5%, calc((100% - var(--fn-content-max)) / 2)); }
+  .fn-about__copy { max-width: 70ch; }
+  .fn-about__split { gap: clamp(3rem, 5vw, 8rem); }
+  .fn-process__grid { max-width: 100rem; margin-inline: auto; }
+  .fn-step p { max-width: 65ch; }
+  .fn-cta > .fn-wrap { max-width: 100rem; }
+}

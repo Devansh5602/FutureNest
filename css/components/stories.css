@@ -4,6 +4,7 @@
   color: white;
   text-align: center;
 }
+.fn-stories > .fn-wrap { max-width: 100rem; }
 .fn-stories h2 { font-size: clamp(28px, 2.5vw, 36px); }
 .fn-stories h2 strong { text-transform: uppercase; }
 .fn-stories > .fn-wrap > p { margin: 24px auto 56px; font-size: 16px; color: #e7edf4; }

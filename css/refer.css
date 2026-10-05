@@ -66,3 +66,8 @@
  .fn-refer-page * { scroll-behavior:auto!important; }
  .rf-step>img,.rf-start { transition:none; }
 }
+
+@media (min-width: 1441px) {
+ .rf-plans { max-width: 80rem; margin-inline: auto; }
+ .rf-heading p { max-width: 80ch; }
+}
