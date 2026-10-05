@@ -1,4 +1,3 @@
-/* Home.svg supplies the artwork; the recording supplies the motion. */
 .fn-home {
   --color-text:#383838; --color-text-secondary:#414651; --color-surface:#fff;
   --fn-icon-sm:1.125rem; --fn-icon-md:2.25rem;
@@ -16,7 +15,6 @@
 .fn-skip { position:fixed; top:0.5rem; left:0.5rem; z-index:9999; padding:0.75rem 1.25rem; background:white; color:#14315c; transform:translateY(-150%); }
 .fn-skip:focus { transform:none; }
 
-/* Docked navigation, sized to the reference rather than a full-width header. */
 .fn-home .header { width:90%; left:5%; right:5%; border-radius:0 0 1.125rem 1.125rem; }
 .fn-home .header .container { width:90%; padding-inline:0; }
 .fn-home .header__inner { min-height:clamp(4.5rem,5.27vw,6.3125rem); }
@@ -26,7 +24,6 @@
 .fn-home .btn--header { min-height:2.75rem; font-size:clamp(0.8125rem,.94vw,1.125rem); }
 .fn-home .header--scrolled { box-shadow:0 0.5rem 1.875rem #14315c0d; }
 
-/* Whole slides travel horizontally, as in the prototype. */
 #main-content > .fn-hero { padding-top:0; }
 #main-content > .fn-hero::before { display:none; }
 .fn-hero { position:relative; isolation:isolate; height:max(41.25rem,62.72vw); max-height:75.1875rem; overflow:hidden; background:#112238; color:white; touch-action:pan-y; }
@@ -51,7 +48,6 @@
 .fn-hero__controls button:active,.fn-live__controls button:active { transform:scale(.94); }
 .fn-hero__controls button:disabled { cursor:wait; }
 
-/* Two identical groups make a seamless loop. */
 .fn-marquee { overflow:hidden; background:radial-gradient(at top,#2a2a2a,#111); color:white; padding:clamp(2.1875rem,4.9vw,5.875rem) 0; }
 .fn-marquee__track { display:flex; width:max-content; min-width:200vw; animation:fn-marquee 32s linear infinite; }
 .fn-marquee__group { display:flex; flex:0 0 auto; min-width:100vw; justify-content:space-around; align-items:center; gap:3rem; padding-inline:1.5rem; }
@@ -68,7 +64,6 @@
 .fn-value img { width:var(--fn-icon-md); height:var(--fn-icon-md); object-fit:contain; }
 .fn-value p { font-size:clamp(0.8125rem,.95vw,1.125rem); font-weight:700; line-height:1.35; text-align:center; }
 
-/* Side panels follow scroll progress in both directions. */
 .fn-why { overflow:clip; padding:clamp(6.25rem,10vw,12rem) 0 clamp(5.625rem,8vw,9.375rem); }
 .fn-why__title { text-align:center; font-size:clamp(1.75rem,2.5vw,3rem); margin-bottom:clamp(3.4375rem,6.3vw,7.5rem); }
 .fn-why__title strong { display:block; text-transform:uppercase; }
@@ -181,7 +176,6 @@
 .fn-social a,.fn-social span { width:2rem; height:2rem; display:grid; place-items:center; background:#ffffff15; border-radius:50%; color:#fff; font-size:0.75rem; }
 .fn-footer__rule { margin-top:4.0625rem; border-top:0.0625rem solid #ffffff15; padding-top:1.375rem; color:#aaa; }
 
-/* Progressive enhancement: content remains visible if JavaScript is unavailable. */
 .fn-motion .fn-why__card { transition:transform .15s linear; }
 .fn-motion .fn-why__grid .fn-why__card:first-child { transform:translateX(calc(-1 * var(--why-offset,0%))); }
 .fn-motion .fn-why__grid .fn-why__card:last-child { transform:translateX(var(--why-offset,0%)); }
@@ -191,7 +185,6 @@
 .fn-motion .fn-live:not(.is-revealed) .fn-offer__company { opacity:0; transform:translateY(0.75rem); }
 
 @media(max-width:1150px) {
-
   .fn-why__grid { gap:1.125rem; }
   .fn-why__card { padding-inline:1.25rem; }
   .fn-point { gap:0.5625rem; }
@@ -287,12 +280,10 @@
 }
 
 .fn-home #page-wrapper {
-  /* Clip horizontal artwork without creating a scroll container that traps sticky sections. */
   overflow-x: clip;
   overflow-y: visible;
 }
 
-/* Keep tablet copy readable, and give phone service artwork room around its text. */
 @media (min-width:601px) and (max-width:1024px) {
   .fn-hero__lead { max-width:52ch; width:75%; }
   .fn-hero__copy { width:84%; margin-left:8%; }
@@ -308,12 +299,11 @@
   .fn-live__head h2 { width:100%; }
 }
 
-/* Extend the 1920px desktop composition as a unit at ultrawide/zoomed-out sizes. */
 @media (min-width:1920px) {
   html:has(.fn-home) { font-size:calc(100vw / 120); }
   .fn-home .header .container { max-width:none; }
 }
-/* The scroll viewport spans the image. Its initial inset is space, not a clipping edge. */
+
 .fn-live > .fn-wrap { width:100%; margin:0; overflow:visible; }
 .fn-live__head { margin-left:32%; padding-right:9%; }
 .fn-live__row { padding-left:32%; scroll-padding-left:32%; position:relative; z-index:1; }
@@ -326,7 +316,6 @@
   .fn-live__row { padding-left:1.25rem; scroll-padding-left:1.25rem; }
 }
 
-/* Shared brand and control artwork follows the same rem scale as page typography. */
 .fn-home .logo__img { flex:none; object-fit:contain; }
 .fn-home .btn--header { height:3rem; border-radius:2.5rem; }
 .fn-home .btn--header img { width:var(--fn-icon-sm); height:var(--fn-icon-sm); object-fit:contain; flex:none; }

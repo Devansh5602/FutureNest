@@ -1,18 +1,17 @@
-/* About Us: original supplied artwork, responsive layout and native FAQ interaction. */
 .fn-about-page .nav__link.active { color:#a56400; }
 .fn-about-page .nav__link.active::after { background:var(--fn-gold); }
 .fn-about-page { --ab-cream:#fff9ed; --ab-faq:#fbeccd; }
 #main-content > .ab-hero:first-child { padding-top:0; }
 .ab-hero { position:relative; isolation:isolate; min-height:31.25rem; height:41.6vw; max-height:50rem; display:grid; align-items:end; color:white; padding-bottom:4.3%; }
 .ab-photo { position:absolute; inset:0; z-index:-1; width:100%; height:100%; object-fit:cover; object-position:center; background-color:#233342; }
-/* The hero artwork already includes its dark overlay. */
+
 .ab-hero__copy { text-align:center; padding-top:8.75rem; }
 .fn-about-page .ab-hero h1 { font-family:'Urbanist',sans-serif; font-size:clamp(2.5rem,4.65vw,5.625rem); font-weight:500; line-height:1.24; letter-spacing:-.025em; }
 .fn-about-page .ab-hero h1 strong { font-weight:800; color:var(--fn-gold); }
 .ab-hero p { max-width:70%; margin:1.5rem auto 0; font-size:clamp(0.9375rem,1.02vw,1.25rem); line-height:1.65; }
 .ab-intro { display:grid; grid-template-columns:1fr 1fr; gap:8%; padding-block:clamp(3.4375rem,6vw,7.1875rem); align-items:start; }
-.ab-intro h2,.ab-section-head h2,.ab-faq h2,.ab-origin h2 { font-size:clamp(1.75rem,2.45vw,2.9375rem); }
-.ab-intro p,.ab-section-head p,.ab-faq__intro p { font-size:clamp(0.9375rem,1vw,1.1875rem); line-height:1.6; }
+.ab-intro h2,.ab-section-head h2,.ab-origin h2 { font-size:clamp(1.75rem,2.45vw,2.9375rem); }
+.ab-intro p,.ab-section-head p { font-size:clamp(0.9375rem,1vw,1.1875rem); line-height:1.6; }
 .ab-intro p+p { margin-top:1rem; }
 .ab-origin { position:relative; isolation:isolate; color:white; min-height:32.5rem; height:49vw; max-height:58.75rem; }
 .ab-origin::after { content:""; position:absolute; inset:0; z-index:-1; background:linear-gradient(0deg,#101719b8,transparent 78%); pointer-events:none; }
@@ -37,30 +36,12 @@
 .ab-track--finance { grid-column:span 5; }
 .ab-track span { position:absolute; left:0; bottom:clamp(1.25rem,2.3vw,2.75rem); max-width:95%; padding:0.875rem 1.25rem; border-radius:0 0.5rem 0.5rem 0; background:var(--fn-gold); color:#242424; font-size:clamp(0.875rem,1vw,1.25rem); font-weight:600; }
 @media(hover:hover) { .ab-track:hover img { transform:scale(1.035); } }
-.ab-faq { display:grid; grid-template-columns:1fr 1.82fr; align-items:start; gap:7%; padding-block:clamp(5.625rem,9.5vw,11.25rem) clamp(10.625rem,18vw,21.5625rem); }
-.ab-faq__intro { position:sticky; top:8.125rem; }
-.ab-faq__intro p { margin-top:1.125rem; }
-.ab-faq__intro a { text-decoration:underline; text-underline-offset:0.1875rem; }
-.ab-faq__list { display:grid; gap:0.875rem; min-width:0; overflow-anchor:none; }
-.ab-faq__item { border-radius:0.875rem; background:var(--ab-faq); overflow:clip; scroll-margin-top:6.875rem; }
-.ab-faq__item summary { display:flex; align-items:flex-start; justify-content:space-between; gap:1.5rem; padding:1.375rem 1.5rem; list-style:none; cursor:pointer; font-size:clamp(0.875rem,1.1vw,1.3125rem); font-weight:700; line-height:1.4; }
-.ab-faq__item summary::-webkit-details-marker { display:none; }
-.ab-faq__item summary:focus-visible { outline:0.1875rem solid #14315c; outline-offset:-0.25rem; border-radius:0.875rem; }
-.ab-faq__icon { width:1.25rem; height:1.25rem; flex-shrink:0; position:relative; margin-top:0.0625rem; transition:transform .25s; }
-.ab-faq__icon::before,.ab-faq__icon::after { content:''; position:absolute; background:currentColor; width:1rem; height:0.09375rem; left:0.125rem; top:0.5625rem; }
-.ab-faq__icon::after { transform:rotate(90deg); }
-.ab-faq__item[open] .ab-faq__icon { transform:rotate(45deg); }
-.ab-faq__answer { padding:0 1.5rem 1.625rem; }
-.ab-faq__answer p { font-size:clamp(0.875rem,1.05vw,1.25rem); line-height:1.6; }
 @media(max-width:900px) {
  .ab-hero { min-height:34.375rem; padding-bottom:4.0625rem; }
  .ab-hero p { max-width:80%; }
  .ab-origin__copy { max-width:75%; }
  .ab-origin::after { background:linear-gradient(0deg,#101719e6,#10171922 100%); }
  .ab-intro { gap:2.1875rem; }
- .ab-faq { gap:2.1875rem; grid-template-columns:1fr 1.6fr; }
- .ab-faq__item summary { padding:1.125rem; gap:0.9375rem; }
- .ab-faq__answer { padding:0 1.125rem 1.375rem; }
  .ab-track-grid { grid-template-columns:repeat(2,minmax(0,1fr)); grid-template-rows:none; }
  .ab-track { grid-column:auto; grid-row:auto; aspect-ratio:375/291; }
  .ab-track--ai { grid-row:span 2; aspect-ratio:auto; }
@@ -84,11 +65,8 @@
  .ab-service-grid li { min-height:6.875rem; padding:1.125rem 0.75rem; font-size:0.875rem; border-radius:0.875rem; }
  .ab-track-grid { gap:0.75rem; }
  .ab-track { border-radius:0.875rem; }
- .ab-faq { grid-template-columns:1fr; gap:2rem; padding-bottom:10.625rem; }
- .ab-faq__intro { position:static; }
- .ab-faq__list { gap:0.625rem; }
 }
 @media(prefers-reduced-motion:reduce) {
  .fn-about-page * { scroll-behavior:auto!important; }
- .ab-track img,.ab-faq__icon { transition:none; }
+ .ab-track img { transition:none; }
 }

@@ -1,4 +1,3 @@
-/* Mobile Home composition from the supplied 440px prototype. */
 .fn-mobile-hero,.fn-mobile-partners { display:none; }
 @media(max-width:600px) {
  .fn-homepage .header { width:100%; left:0; right:0; border-radius:0; }
@@ -70,7 +69,7 @@
  .fn-homepage .fn-story-grid:focus-visible { outline:3px solid var(--fn-gold); outline-offset:4px; }
  .fn-homepage .fn-cta picture { display:flow-root; }
 }
-/* At narrow phone widths, move copy above the artwork instead of shrinking or hiding it. */
+
 @media(max-width:380px) {
  .fn-homepage .fn-svc { display:flex; flex-direction:column; aspect-ratio:auto; }
  .fn-homepage .fn-svc picture { display:block; order:2; }

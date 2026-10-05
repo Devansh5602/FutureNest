@@ -1,4 +1,3 @@
-/* Contact recording: supplied hero, four information cards and a compact form. */
 .fn-contact-page .nav__link.active { color:#a56400; }
 .fn-contact-page .nav__link.active::after { background:var(--fn-gold); }
 #main-content > .ct-hero:first-child { padding-top:0; }

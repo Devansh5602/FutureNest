@@ -1,4 +1,3 @@
-/* Referral artwork and reward structure follow the supplied recording. */
 .fn-refer-page { --ab-faq:#fbeccd; }
 .fn-refer-page .nav__link.active { color:#a56400; }
 .fn-refer-page .nav__link.active::after { background:var(--fn-gold); }

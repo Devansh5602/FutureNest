@@ -1,4 +1,3 @@
-/* Mobile compositions from the supplied 440px reference; desktop stays fluid. */
 @media (max-width:600px) {
   :is(.fn-refer-page,.fn-contact-page) .fn-wrap { width:calc(100% - 32px); }
   .rf-hero,.ct-hero { height:217vw; min-height:720px; max-height:956px; padding-bottom:60px; }

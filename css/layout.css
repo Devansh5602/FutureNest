@@ -15,14 +15,12 @@
   padding-block: clamp(2.5rem, 5vw, 4.5rem);
 }
 
-/* Ensure the first section on all pages clears the fixed header with ample breathing room & distinct separation */
 #main-content > section:first-child,
 #main-content > .section:first-child {
   padding-top: clamp(8.5rem, 12vw, 11rem);
   position: relative;
 }
 
-/* Subtle top separator glow on subpage first section */
 #main-content > .section:first-child::before {
   content: '';
   position: absolute;

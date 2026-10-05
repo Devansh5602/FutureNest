@@ -1,3 +1,5 @@
 
 # Local design references and verification output
 .preview/
+
+node_modules/

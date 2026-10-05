@@ -1,10 +1,3 @@
-/* ============================================================
-   animations.css — Transitions, Scroll Reveal & Keyframes
-   ============================================================ */
-
-/* ══════════════════════════════════════
-   SCROLL REVEAL
-══════════════════════════════════════ */
 .reveal {
   opacity: 0;
   transform: translateY(28px);
@@ -18,7 +11,6 @@
   transform: translateY(0);
 }
 
-/* Staggered reveal delays */
 .reveal-delay-1 { transition-delay: 0.1s; }
 .reveal-delay-2 { transition-delay: 0.2s; }
 .reveal-delay-3 { transition-delay: 0.3s; }
@@ -26,7 +18,6 @@
 .reveal-delay-5 { transition-delay: 0.5s; }
 .reveal-delay-6 { transition-delay: 0.6s; }
 
-/* From left */
 .reveal-left {
   opacity: 0;
   transform: translateX(-28px);
@@ -40,7 +31,6 @@
   transform: translateX(0);
 }
 
-/* From right */
 .reveal-right {
   opacity: 0;
   transform: translateX(28px);
@@ -54,7 +44,6 @@
   transform: translateX(0);
 }
 
-/* Scale up */
 .reveal-scale {
   opacity: 0;
   transform: scale(0.95);
@@ -68,9 +57,6 @@
   transform: scale(1);
 }
 
-/* ══════════════════════════════════════
-   HERO ANIMATIONS
-══════════════════════════════════════ */
 @keyframes heroReveal {
   from {
     opacity: 0;
@@ -90,33 +76,23 @@
   animation: heroReveal 0.8s cubic-bezier(0.4, 0, 0.2, 1) 0.15s both;
 }
 
-/* ══════════════════════════════════════
-   COUNTER ANIMATION
-══════════════════════════════════════ */
 .stat-counter {
   display: inline-block;
   font-variant-numeric: tabular-nums;
 }
 
-/* ══════════════════════════════════════
-   PROCESS STEP ENTRANCE
-══════════════════════════════════════ */
 .process-step {
   transition:
     opacity 0.5s ease,
     transform 0.5s ease;
 }
 
-/* ══════════════════════════════════════
-   THEME TRANSITION
-══════════════════════════════════════ */
 * {
   transition-property: background-color, border-color, color, box-shadow;
   transition-duration: 200ms;
   transition-timing-function: ease;
 }
 
-/* Override to not slow down animations that already have transitions */
 .btn, .card, .service-card, .nav__link,
 .footer__link, .insight-card, .industry-card,
 .pathway-card, .why-fn__benefit, .resource-card,
@@ -129,17 +105,11 @@
     box-shadow var(--transition-base);
 }
 
-/* ══════════════════════════════════════
-   HOVER EFFECTS
-══════════════════════════════════════ */
-
-/* Gradient border glow on card hover */
 .service-card:hover,
 .industry-card:hover {
   box-shadow: var(--shadow-lg), 0 0 0 1px rgba(78,82,224,0.15);
 }
 
-/* Link arrow micro-interaction */
 a .arrow-right,
 button .arrow-right {
   display: inline-block;
@@ -151,14 +121,10 @@ button:hover .arrow-right {
   transform: translateX(5px);
 }
 
-/* Subtle image hover zoom */
 .insight-card__img {
   transition: filter var(--transition-slow);
 }
 
-/* ══════════════════════════════════════
-   PARTNER LOGO MARQUEE SCROLL
-══════════════════════════════════════ */
 @keyframes logoMarquee {
   from {
     transform: translateX(0);
@@ -176,9 +142,6 @@ button:hover .arrow-right {
   animation-play-state: paused;
 }
 
-/* ══════════════════════════════════════
-   REDUCED MOTION OVERRIDE
-══════════════════════════════════════ */
 @media (prefers-reduced-motion: reduce) {
   .reveal,
   .reveal-left,
@@ -188,22 +151,18 @@ button:hover .arrow-right {
     transform: none;
     transition: none;
   }
-
   .hero__content,
   .hero__visual {
     animation: none;
     opacity: 1;
     transform: none;
   }
-
   .hero-card {
     animation: none;
   }
-
   .hero__node {
     animation: none;
   }
-
   .hero__ring--1,
   .hero__ring--2,
   .hero__ring--3 {
@@ -211,7 +170,6 @@ button:hover .arrow-right {
   }
 }
 
-/* Page Transition Animations */
 .page-fade-in {
   animation: pageFadeIn 0.4s ease-out forwards;
 }
@@ -228,7 +186,6 @@ button:hover .arrow-right {
   100% { opacity: 0; }
 }
 
-/* Active Nav Link Styling */
 .nav__link.active {
   color: var(--color-primary);
   font-weight: 600;

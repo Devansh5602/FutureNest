@@ -1,4 +1,3 @@
-/* Prototype behavior, enhanced for keyboard, touch and reduced motion. */
 (function () {
   'use strict';
 
@@ -121,7 +120,6 @@
     window.addEventListener('pageshow', schedule);
     exposeSlide();
 
-    // Reveal only when the section enters view; never hide content without an observer.
     if ('IntersectionObserver' in window) {
       document.body.classList.add('fn-motion');
       const reveal = new IntersectionObserver(entries => {
@@ -155,7 +153,6 @@
     });
     schedule();
 
-    // Scroll progress makes the side panels enter and exit in either direction.
     const benefits = document.querySelector('.fn-why__grid');
     let benefitsFrame;
     function updateBenefits() {
@@ -189,74 +186,6 @@
       }
     });
 
-    // Native scrolling supports touch/trackpads. Arrows always move one complete card.
-    const row = document.getElementById('live-row');
-    const previous = document.querySelector('[data-live="prev"]');
-    const next = document.querySelector('[data-live="next"]');
-    if (row && previous && next) {
-      function updateEdges() {
-        previous.disabled = row.scrollLeft <= 2;
-        next.disabled = row.scrollLeft >= row.scrollWidth - row.clientWidth - 2;
-      }
-      function moveCards(direction) {
-        const card = row.firstElementChild;
-        const distance = card.getBoundingClientRect().width + parseFloat(getComputedStyle(row).columnGap);
-        row.scrollBy({ left: direction * distance, behavior: reduced.matches ? 'instant' : 'smooth' });
-      }
-      previous.addEventListener('click', () => moveCards(-1));
-      next.addEventListener('click', () => moveCards(1));
-      row.addEventListener('scroll', updateEdges, { passive: true });
-      row.addEventListener('keydown', event => {
-        if (event.key === 'ArrowLeft' || event.key === 'ArrowRight') {
-          event.preventDefault();
-          moveCards(event.key === 'ArrowRight' ? 1 : -1);
-        }
-        if (event.key === 'Home' || event.key === 'End') {
-          event.preventDefault();
-          row.scrollTo({ left: event.key === 'Home' ? 0 : row.scrollWidth, behavior: 'instant' });
-        }
-      });
-      new ResizeObserver(updateEdges).observe(row);
-      updateEdges();
-    }
-
-    // The existing static site has no subscription service; never claim a fake signup.
-    const form = document.querySelector('.fn-sub');
-    form.addEventListener('submit', event => {
-      event.preventDefault();
-      document.getElementById('subscription-status').textContent =
-        'Online signup is not available yet. Please contact us to request updates.';
-    });
-
-    // Keep closed mobile navigation out of the tab order and trap focus while open.
-    const menu = document.getElementById('mobile-nav');
-    const opener = document.getElementById('hamburger-btn');
-    const main = document.getElementById('main-content');
-    const footer = document.querySelector('.fn-footer');
-    function syncMenu() {
-      const open = opener.getAttribute('aria-expanded') === 'true';
-      menu.inert = !open;
-      main.inert = open;
-      footer.inert = open;
-      opener.setAttribute('aria-label', open ? 'Close navigation menu' : 'Open navigation menu');
-      if (open) menu.querySelector('a').focus({ preventScroll: true });
-    }
-    if (menu && opener) {
-      syncMenu();
-      new MutationObserver(syncMenu).observe(opener, { attributes: true, attributeFilter: ['aria-expanded'] });
-      document.addEventListener('keydown', event => {
-        if (opener.getAttribute('aria-expanded') !== 'true') return;
-        if (event.key === 'Escape') { opener.focus({ preventScroll: true }); return; }
-        if (event.key !== 'Tab') return;
-        const links = [opener, ...menu.querySelectorAll('a, button')];
-        const current = links.indexOf(document.activeElement);
-        event.preventDefault();
-        links[(current + (event.shiftKey ? -1 : 1) + links.length) % links.length].focus();
-      });
-      matchMedia('(min-width: 1025px)').addEventListener('change', event => {
-        if (event.matches && opener.getAttribute('aria-expanded') === 'true') opener.click();
-      });
-    }
   }
 
   document.addEventListener('DOMContentLoaded', initHome);
