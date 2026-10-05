@@ -11,7 +11,7 @@
  .fn-home .mobile-nav-backdrop { top:72px; background:#14263c12; backdrop-filter:none; -webkit-backdrop-filter:none; }
 }
 @media(max-width:600px) {
- .fn-home .header { width:100%; left:0; right:0; border-radius:0; }
+ .fn-home .header { width:100%; left:0; right:0; transform:none; border-radius:0; }
  .fn-home .header .container { width:calc(100% - 32px); }
  .fn-home .logo__img { width:160px; }
  .fn-home .hamburger { background:#f7f7f9; border-radius:6px; }

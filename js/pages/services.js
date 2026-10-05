@@ -5,21 +5,6 @@
     const reduced = matchMedia('(prefers-reduced-motion: reduce)');
     const tabs = Array.from(document.querySelectorAll('[data-service]'));
     const panels = Array.from(document.querySelectorAll('.sv-panel'));
-    const stories = document.querySelector('.fn-story-grid');
-
-    if (stories) {
-      stories.addEventListener('keydown', function (event) {
-        if (!matchMedia('(max-width: 600px)').matches || event.target !== stories) return;
-        if (!['ArrowLeft', 'ArrowRight', 'Home', 'End'].includes(event.key)) return;
-        event.preventDefault();
-        if (event.key === 'Home' || event.key === 'End') {
-          stories.scrollTo({ left: event.key === 'Home' ? 0 : stories.scrollWidth, behavior: 'instant' });
-          return;
-        }
-        const distance = stories.firstElementChild.getBoundingClientRect().width + parseFloat(getComputedStyle(stories).columnGap);
-        stories.scrollBy({ left: (event.key === 'ArrowRight' ? 1 : -1) * distance, behavior: reduced.matches ? 'instant' : 'smooth' });
-      });
-    }
 
     function activate(id, updateURL) {
       if (updateURL === undefined) updateURL = true;
@@ -32,6 +17,7 @@
       panels.forEach(function (panel) {
         panel.hidden = panel.id !== id;
       });
+      requestAnimationFrame(updateStacks);
       if (updateURL) history.replaceState(null, '', '#' + id);
     }
 
@@ -64,11 +50,14 @@
     const stacks = Array.from(document.querySelectorAll('.sv-stack'));
 
     function updateStacks() {
+      const headerHeight = document.getElementById('site-header').getBoundingClientRect().height;
       stacks.forEach(function (stack) {
+        if (!stack.offsetHeight) return;
         Array.from(stack.children).forEach(function (card, index) {
-          const scale = parseFloat(getComputedStyle(document.documentElement).fontSize) / 16;
-          const top = Math.min((110 + index * 20) * scale, innerHeight - card.offsetHeight - 24 * scale);
+          const offset = innerWidth <= 700 ? 10 : 20;
+          const top = Math.min(headerHeight + 16 + index * offset, innerHeight - card.offsetHeight - 24);
           card.style.setProperty('--stack-top', top + 'px');
+          card.style.zIndex = String(index + 1);
         });
         stack.classList.toggle('is-stacking', !reduced.matches);
       });
@@ -76,7 +65,7 @@
 
     const stackObserver = new ResizeObserver(updateStacks);
     stacks.forEach(function (stack) {
-      stackObserver.observe(stack);
+      Array.from(stack.children).forEach(function (card) { stackObserver.observe(card); });
     });
     window.addEventListener('resize', updateStacks, { passive: true });
     reduced.addEventListener('change', updateStacks);

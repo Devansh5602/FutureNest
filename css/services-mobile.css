@@ -191,31 +191,7 @@
   .fn-services-page .fn-offer__photo { height: 145px; }
   .fn-services-page .fn-offer__company { font-size: 25px; }
 
-  .fn-services-page .fn-stories { padding: 56px 0; }
-  .fn-services-page .fn-stories h2 { font-size: 24px; }
-  .fn-services-page .fn-stories > .fn-wrap > p { font-size: 13px; margin-bottom: 28px; }
-  .fn-services-page .fn-story-grid {
-    grid-template-columns: none;
-    grid-auto-columns: 82%;
-    grid-auto-flow: column;
-    grid-template-rows: repeat(2, 220px);
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-    touch-action: pan-x pan-y;
-    gap: 12px;
-    padding-bottom: 12px;
-    text-align: left;
-  }
-  .fn-services-page .sv-tabs button:focus-visible,
-  .fn-services-page .fn-story-grid:focus-visible { outline: 3px solid var(--fn-gold); outline-offset: 4px; }
-  .fn-services-page .fn-story {
-    aspect-ratio: auto;
-    grid-column: auto;
-    scroll-snap-align: start;
-    border-radius: 16px;
-  }
-  .fn-services-page .fn-story--tall { grid-row: span 2; }
-  .fn-services-page .fn-story--tall .fn-story__portrait { top: 0; height: 100%; }
+  .fn-services-page .sv-tabs button:focus-visible { outline: 3px solid var(--fn-gold); outline-offset: 4px; }
 
   .fn-services-page .sv-stack { padding-block: 80px 24px; }
   .fn-services-page .sv-feature {
@@ -226,7 +202,7 @@
     border-radius: 16px;
   }
   .fn-services-page .sv-feature img { aspect-ratio: 386 / 337; border-radius: 12px; }
-  .fn-services-page .sv-feature--reverse img { order: 0; }
+  .fn-services-page .sv-feature--reverse > :is(picture,img) { order: 0; }
   .fn-services-page .sv-feature h2 { font-size: 22px; margin-bottom: 12px; }
   .fn-services-page .sv-feature p,
   .fn-services-page .sv-feature li { font-size: 13px; }

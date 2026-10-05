@@ -45,9 +45,6 @@
  .fn-homepage .fn-chips span { font-size:10px; padding:3px 6px; }
  .fn-homepage .fn-offer__photo { height:145px; }
  .fn-homepage .fn-offer__company { font-size:25px; }
- .fn-homepage .fn-story-grid { grid-template-columns:none; grid-auto-columns:82%; grid-auto-flow:column; grid-template-rows:repeat(2,220px); overflow-x:auto; scroll-snap-type:x mandatory; gap:12px; padding-bottom:12px; text-align:left; }
- .fn-homepage .fn-story { aspect-ratio:auto; grid-column:auto; scroll-snap-align:start; }
- .fn-homepage .fn-story--tall { grid-row:span 2; }
  .fn-homepage .fn-process { padding-bottom:200px; }
  .fn-homepage .fn-process__grid { border-radius:0 0 16px 16px; }
  .fn-homepage .fn-process__col { padding:36px 26px; }
@@ -65,8 +62,6 @@
 @media(max-width:600px) {
  .fn-homepage .fn-point>div { min-width:0; overflow-wrap:anywhere; }
  .fn-homepage .fn-pill { max-width:calc(100% - 24px); white-space:normal; text-align:center; }
- .fn-homepage .fn-story-grid { touch-action:pan-x pan-y; }
- .fn-homepage .fn-story-grid:focus-visible { outline:3px solid var(--fn-gold); outline-offset:4px; }
  .fn-homepage .fn-cta picture { display:flow-root; }
 }
 

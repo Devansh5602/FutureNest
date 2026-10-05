@@ -37,21 +37,22 @@
     href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;700;800&family=Urbanist:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700&display=swap"
     rel="stylesheet" />
 
-  <link rel="stylesheet" href="../css/variables.css" />
-  <link rel="stylesheet" href="../css/reset.css" />
-  <link rel="stylesheet" href="../css/base.css" />
-  <link rel="stylesheet" href="../css/layout.css" />
-  <link rel="stylesheet" href="../css/components.css" />
-  <link rel="stylesheet" href="../css/sections.css" />
-  <link rel="stylesheet" href="../css/animations.css" />
-  <link rel="stylesheet" href="../css/responsive.css" />
-  <link rel="stylesheet" href="../css/home.css?v=20261004-icons" />
-  <link rel="stylesheet" href="../css/components/faq.css" />
-  <link rel="stylesheet" href="../css/services.css?v=20261005-details" />
-  <link rel="stylesheet" href="../css/services-mobile.css?v=20261005-details" />
+  <link rel="stylesheet" href="../css/variables.css?v=20261005-layout" />
+  <link rel="stylesheet" href="../css/reset.css?v=20261005-layout" />
+  <link rel="stylesheet" href="../css/base.css?v=20261005-layout" />
+  <link rel="stylesheet" href="../css/layout.css?v=20261005-layout" />
+  <link rel="stylesheet" href="../css/components.css?v=20261005-layout" />
+  <link rel="stylesheet" href="../css/sections.css?v=20261005-layout" />
+  <link rel="stylesheet" href="../css/animations.css?v=20261005-layout" />
+  <link rel="stylesheet" href="../css/responsive.css?v=20261005-layout" />
+  <link rel="stylesheet" href="../css/home.css?v=20261005-layout" />
+  <link rel="stylesheet" href="../css/components/faq.css?v=20261005-layout" />
+  <link rel="stylesheet" href="../css/services.css?v=20261005-layout" />
+  <link rel="stylesheet" href="../css/services-mobile.css?v=20261005-layout" />
 
-  <link rel="stylesheet" href="../css/mobile-navigation.css?v=2" />
-  <script src="../js/theme.js"></script>
+  <link rel="stylesheet" href="../css/mobile-navigation.css?v=20261005-layout" />
+  <link rel="stylesheet" href="../css/components/stories.css?v=20261005-layout" />
+  <script src="../js/theme.js?v=20261005-layout"></script>
 
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"CollectionPage","name":"FutureNest Services","url":"https://www.futurenestplacement.com/services/"}</script>
 </head>
@@ -172,14 +173,35 @@
       <section class="fn-stories" id="success-stories">
         <div class="fn-wrap">
           <h2><strong>Real Success</strong> Real Stories</h2>
-          <p>From career backburn to global opportunities — hear from our candidates who turned ambition into achievement.</p>
-          <div class="fn-story-grid" tabindex="0" aria-label="Candidate success stories">
-            <article class="fn-story fn-story--tall"><picture><source media="(max-width: 600px)" srcset="../assets/services/mobile/story-tall.png" /><img class="fn-story__portrait" src="../assets/home/story-hima.webp" alt="" loading="lazy" width="1920" height="1080" /></picture><span class="sv-story__play" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 5.5v13l10-6.5z" /></svg></span><div class="fn-story__caption"><h3>Hima Bindu Bagam</h3><p>Senior Data Analyst</p><p class="fn-stars">★★★★★</p></div></article>
-            <article class="fn-story"><picture><source media="(max-width: 600px)" srcset="../assets/services/mobile/story-one.png" /><img class="fn-story__portrait" src="../assets/home/story-nithin-a.webp" alt="" loading="lazy" width="1920" height="1081" /></picture><span class="sv-story__play" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 5.5v13l10-6.5z" /></svg></span><div class="fn-story__caption"><h3>Nithin Reddy</h3><p>Senior Project Manager</p><p class="fn-stars">★★★★★</p></div></article>
-            <article class="fn-story"><picture><source media="(max-width: 600px)" srcset="../assets/services/mobile/story-two.png" /><img class="fn-story__portrait" src="../assets/home/story-nithin-b.webp" alt="" loading="lazy" width="1920" height="1081" /></picture><span class="sv-story__play" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 5.5v13l10-6.5z" /></svg></span><div class="fn-story__caption"><h3>Nithin Reddy</h3><p>Senior Project Manager</p><p class="fn-stars">★★★★★</p></div></article>
-            <article class="fn-story"><picture><source media="(max-width: 600px)" srcset="../assets/services/mobile/story-one.png" /><img class="fn-story__portrait" src="../assets/home/story-nithin-a.webp" alt="" loading="lazy" width="1920" height="1081" /></picture><span class="sv-story__play" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 5.5v13l10-6.5z" /></svg></span><div class="fn-story__caption"><h3>Nithin Reddy</h3><p>Senior Project Manager</p><p class="fn-stars">★★★★★</p></div></article>
-            <article class="fn-story"><picture><source media="(max-width: 600px)" srcset="../assets/services/mobile/story-two.png" /><img class="fn-story__portrait" src="../assets/home/story-nithin-b.webp" alt="" loading="lazy" width="1920" height="1081" /></picture><span class="sv-story__play" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 5.5v13l10-6.5z" /></svg></span><div class="fn-story__caption"><h3>Nithin Reddy</h3><p>Senior Project Manager</p><p class="fn-stars">★★★★★</p></div></article>
+          <p>From career breakthrough to global opportunities — hear from our candidates who turned ambition into achievement.</p>
+          <div class="fn-story-grid" tabindex="0" role="region" aria-label="Candidate success stories">
+            <article class="fn-story fn-story--tall">
+              <picture><source media="(max-width: 600px)" srcset="../assets/shared/stories/hima-mobile.png" /><img class="fn-story__portrait" src="../assets/home/story-hima.webp" alt="" loading="lazy" width="1920" height="1080" /></picture>
+              <span class="fn-story__play" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 5.5v13l10-6.5z" /></svg></span>
+              <div class="fn-story__caption"><h3>Hima Bindu Bagam</h3><p>Senior Data Analyst</p><p class="fn-stars">★★★★★</p><span class="fn-story__verified"><svg aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><path d="m12 1 3 3 4-.1.8 4L23 11l-2 3.5-.4 4-4 .8L13 23l-3.5-2-4-.4-.8-4L1 13l2-3.5.4-4 4-.8z" /><path d="m7 12 3 3 7-7" fill="none" stroke="#33445b" stroke-width="2" /></svg>Verified</span></div>
+            </article>
+            <article class="fn-story">
+              <picture><source media="(max-width: 600px)" srcset="../assets/shared/stories/project-manager-mobile.png" /><img class="fn-story__portrait" src="../assets/home/story-nithin-a.webp" alt="" loading="lazy" width="1920" height="1081" /></picture>
+              <span class="fn-story__play" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 5.5v13l10-6.5z" /></svg></span>
+              <div class="fn-story__caption"><h3>Nithin Reddy</h3><p>Senior Project Manager</p><p class="fn-stars">★★★★★</p><span class="fn-story__verified"><svg aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><path d="m12 1 3 3 4-.1.8 4L23 11l-2 3.5-.4 4-4 .8L13 23l-3.5-2-4-.4-.8-4L1 13l2-3.5.4-4 4-.8z" /><path d="m7 12 3 3 7-7" fill="none" stroke="#33445b" stroke-width="2" /></svg>Verified</span></div>
+            </article>
+            <article class="fn-story">
+              <picture><source media="(max-width: 600px)" srcset="../assets/shared/stories/nithin-mobile.png" /><img class="fn-story__portrait" src="../assets/home/story-nithin-b.webp" alt="" loading="lazy" width="1920" height="1081" /></picture>
+              <span class="fn-story__play" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 5.5v13l10-6.5z" /></svg></span>
+              <div class="fn-story__caption"><h3>Nithin Reddy</h3><p>Senior Project Manager</p><p class="fn-stars">★★★★★</p><span class="fn-story__verified"><svg aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><path d="m12 1 3 3 4-.1.8 4L23 11l-2 3.5-.4 4-4 .8L13 23l-3.5-2-4-.4-.8-4L1 13l2-3.5.4-4 4-.8z" /><path d="m7 12 3 3 7-7" fill="none" stroke="#33445b" stroke-width="2" /></svg>Verified</span></div>
+            </article>
+            <article class="fn-story">
+              <picture><source media="(max-width: 600px)" srcset="../assets/shared/stories/project-manager-mobile.png" /><img class="fn-story__portrait" src="../assets/home/story-nithin-a.webp" alt="" loading="lazy" width="1920" height="1081" /></picture>
+              <span class="fn-story__play" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 5.5v13l10-6.5z" /></svg></span>
+              <div class="fn-story__caption"><h3>Nithin Reddy</h3><p>Senior Project Manager</p><p class="fn-stars">★★★★★</p><span class="fn-story__verified"><svg aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><path d="m12 1 3 3 4-.1.8 4L23 11l-2 3.5-.4 4-4 .8L13 23l-3.5-2-4-.4-.8-4L1 13l2-3.5.4-4 4-.8z" /><path d="m7 12 3 3 7-7" fill="none" stroke="#33445b" stroke-width="2" /></svg>Verified</span></div>
+            </article>
+            <article class="fn-story">
+              <picture><source media="(max-width: 600px)" srcset="../assets/shared/stories/nithin-mobile.png" /><img class="fn-story__portrait" src="../assets/home/story-nithin-b.webp" alt="" loading="lazy" width="1920" height="1081" /></picture>
+              <span class="fn-story__play" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 5.5v13l10-6.5z" /></svg></span>
+              <div class="fn-story__caption"><h3>Nithin Reddy</h3><p>Senior Project Manager</p><p class="fn-stars">★★★★★</p><span class="fn-story__verified"><svg aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><path d="m12 1 3 3 4-.1.8 4L23 11l-2 3.5-.4 4-4 .8L13 23l-3.5-2-4-.4-.8-4L1 13l2-3.5.4-4 4-.8z" /><path d="m7 12 3 3 7-7" fill="none" stroke="#33445b" stroke-width="2" /></svg>Verified</span></div>
+            </article>
           </div>
+          <a class="fn-stories__more" href="/">Watch more success story <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 12h16m-5-5 5 5-5 5" /></svg></a>
         </div>
       </section>
 
@@ -296,10 +318,11 @@
 
   </div>
 
-  <script src="../js/site.js"></script>
-  <script src="../js/components/faq.js"></script>
-  <script src="../js/pages/services.js?v=20261005-mobile"></script>
-  <script src="../js/navigation.js"></script>
+  <script src="../js/site.js?v=20261005-layout"></script>
+  <script src="../js/components/stories.js?v=20261005-layout"></script>
+  <script src="../js/components/faq.js?v=20261005-layout"></script>
+  <script src="../js/pages/services.js?v=20261005-layout"></script>
+  <script src="../js/navigation.js?v=20261005-layout"></script>
 
 </body>
 

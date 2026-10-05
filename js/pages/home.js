@@ -173,18 +173,6 @@
       updateBenefits();
     }
 
-    const stories = document.querySelector('.fn-story-grid');
-    stories?.addEventListener('keydown', event => {
-      if (!matchMedia('(max-width:600px)').matches) return;
-      if (!['ArrowLeft', 'ArrowRight', 'Home', 'End'].includes(event.key)) return;
-      event.preventDefault();
-      if (event.key === 'Home' || event.key === 'End') {
-        stories.scrollTo({ left:event.key === 'Home' ? 0 : stories.scrollWidth, behavior:'instant' });
-      } else {
-        const distance = stories.firstElementChild.getBoundingClientRect().width + parseFloat(getComputedStyle(stories).columnGap);
-        stories.scrollBy({ left:(event.key === 'ArrowRight' ? 1 : -1) * distance, behavior:reduced.matches ? 'instant' : 'smooth' });
-      }
-    });
 
   }
 

@@ -58,11 +58,28 @@ async function run() {
             await tab.click();
             assert.equal(await tab.getAttribute('aria-selected'), 'true');
             assert.equal(await page.locator('.sv-panel:visible').count(), 1);
+            for (const card of await page.locator('.sv-panel:visible .sv-feature').all()) {
+              const aligned = await card.evaluate((element, mobile) => {
+                const image = element.querySelector('picture, img').getBoundingClientRect();
+                const copy = element.querySelector(':scope > div').getBoundingClientRect();
+                return mobile ? copy.top >= image.bottom - 1 : Math.min(image.bottom, copy.bottom) > Math.max(image.top, copy.top);
+              }, width <= 700);
+              assert(aligned, `Service image and text layout at ${width}px`);
+            }
             assert(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth));
           }
           await page.getByRole('tab').last().focus();
           await page.keyboard.press('Home');
           assert.equal(await page.getByRole('tab').first().getAttribute('aria-selected'), 'true');
+        }
+
+        if (route === '/' || route === '/services/') {
+          assert.equal(await page.locator('.fn-story__play').count(), 5);
+          assert.equal(await page.locator('.fn-story__verified').count(), 5);
+          assert.equal(await page.locator('.fn-stories__more').getAttribute('href'), '/');
+        }
+        if (width === 1920) {
+          assert(await page.locator('.fn-wrap').first().evaluate(element => element.getBoundingClientRect().width <= 1200));
         }
 
         const next = page.locator('[data-live="next"]');
@@ -102,6 +119,27 @@ async function run() {
     assert.equal(await page.locator('.fn-marquee__track').evaluate(element => getComputedStyle(element).animationName === 'none'), false);
     await page.emulateMedia({ reducedMotion: 'reduce' });
     assert.equal(await page.locator('.fn-marquee__track').evaluate(element => getComputedStyle(element).animationName), 'none');
+    for (const width of [320, 440, 1920]) {
+      await page.setViewportSize({ width, height: 844 });
+      await page.emulateMedia({ reducedMotion: 'no-preference' });
+      await page.goto(`${baseURL}/services/`);
+      for (const id of ['background-verification', 'it-training']) {
+        await page.locator(`[data-service="${id}"]`).click();
+        const card = page.locator(`#${id} .sv-feature`).first();
+        await page.waitForFunction(panel => document.querySelector(`#${panel} .sv-stack`).classList.contains('is-stacking'), id);
+        const position = await card.evaluate(element => ({
+          start: element.getBoundingClientRect().top + scrollY,
+          top: parseFloat(getComputedStyle(element).top)
+        }));
+        await page.evaluate(({ start, top }) => window.scrollTo({ top: start - top + 50, behavior: 'instant' }), position);
+        await page.waitForTimeout(100);
+        const before = await card.evaluate(element => element.getBoundingClientRect().top);
+        await page.evaluate(() => window.scrollBy({ top: 100, behavior: 'instant' }));
+        await page.waitForTimeout(100);
+        const after = await card.evaluate(element => element.getBoundingClientRect().top);
+        assert(Math.abs(before - after) < 1, `Sticky service cards at ${width}px`);
+      }
+    }
     assert.deepEqual(errors, []);
     console.log('PASS links, images, FAQs, navigation, tabs, carousels, form validation, referral prefills, and motion preferences.');
   } finally {
