@@ -26,6 +26,7 @@
     });
 
     function exposeSlide() {
+      hero.dataset.activeSlide = String(index);
       slides.forEach((slide, i) => {
         slide.setAttribute('aria-hidden', String(i !== index));
         slide.inert = i !== index;
@@ -84,13 +85,18 @@
       const direction = button.dataset.hero === 'next' ? 1 : -1;
       show(index + direction, direction, true);
     }));
-    pause.addEventListener('click', () => {
-      userPaused = !userPaused;
-      pause.setAttribute('aria-pressed', String(userPaused));
-      pause.setAttribute('aria-label', userPaused ? 'Resume slideshow' : 'Pause slideshow');
-      pause.querySelector('path').setAttribute('d', userPaused ? 'm8 5 10 7-10 7Z' : 'M8 5v14M16 5v14');
-      schedule();
-    });
+    if (pause) {
+      pause.addEventListener('click', () => {
+        userPaused = !userPaused;
+        pause.setAttribute('aria-pressed', String(userPaused));
+        pause.setAttribute('aria-label', userPaused ? 'Resume slideshow' : 'Pause slideshow');
+        const path = pause.querySelector('path');
+        if (path) {
+          path.setAttribute('d', userPaused ? 'm8 5 10 7-10 7Z' : 'M8 5v14M16 5v14');
+        }
+        schedule();
+      });
+    }
     hero.addEventListener('focusin', () => { focusPaused = true; schedule(); });
     hero.addEventListener('focusout', event => {
       if (!hero.contains(event.relatedTarget)) { focusPaused = false; schedule(); }

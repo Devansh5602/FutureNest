@@ -137,30 +137,50 @@
     <main id="main-content" tabindex="-1">
       <section class="fn-hero" role="region" aria-roledescription="carousel" aria-label="Featured career opportunities">
         <div class="fn-hero__slide is-active">
-          <img class="fn-hero__bg" src="assets/home/hero-network.png" alt="" width="1918" height="1203" decoding="async" fetchpriority="high" />
+          <picture>
+            <source media="(max-width: 600px)" srcset="assets/home/mobile/hero-slide-1.webp" type="image/webp" />
+            <source media="(max-width: 600px)" srcset="assets/home/mobile/hero-slide-1.png" />
+            <img class="fn-hero__bg" src="assets/home/hero-network.png" alt="" width="1918" height="1203" decoding="async" fetchpriority="high" />
+          </picture>
           <div class="fn-hero__copy">
-            <h1 class="fn-hero__title" id="hero-heading">Your Skills. Our Network. <strong>Your Next Role.</strong></h1>
+            <h1 class="fn-hero__title" id="hero-heading"><span>Your Skills. Our Network.</span> <strong>Your Next Role.</strong></h1>
             <p class="fn-hero__lead">FutureNest Placement connects skilled professionals with meaningful career opportunities across the USA. Through personalized support, smart recruitment, and access to trusted employers, we help candidates move from searching for jobs to building successful careers.</p>
           </div>
         </div>
         <div class="fn-hero__slide">
-          <img class="fn-hero__bg" src="assets/home/hero-graduates.png" alt="" width="1918" height="1203" decoding="async" />
+          <picture>
+            <source media="(max-width: 600px)" srcset="assets/home/mobile/hero-slide-2.webp" type="image/webp" />
+            <source media="(max-width: 600px)" srcset="assets/home/mobile/hero-slide-2.png" />
+            <img class="fn-hero__bg" src="assets/home/hero-graduates.png" alt="" width="1918" height="1203" decoding="async" />
+          </picture>
           <div class="fn-hero__copy">
-            <h2 class="fn-hero__title">Where Ambitious Graduates Meet <strong>Growing Companies</strong></h2>
+            <h2 class="fn-hero__title"><span>Where Ambitious<br class="fn-hero__br" />Graduates Meet</span> <strong>Growing Companies</strong></h2>
             <p class="fn-hero__lead">We help recent graduates and early-career professionals connect with growing businesses looking for the right talent. By combining faster hiring, focused recruitment, and reliable placement support, FutureNest creates opportunities that benefit both candidates and employers.</p>
           </div>
         </div>
         <div class="fn-hero__slide">
-          <img class="fn-hero__bg" src="assets/home/hero-global.png" alt="" width="1918" height="1203" decoding="async" />
+          <picture>
+            <source media="(max-width: 600px)" srcset="assets/home/mobile/hero-slide-3.webp" type="image/webp" />
+            <source media="(max-width: 600px)" srcset="assets/home/mobile/hero-slide-3.png" />
+            <img class="fn-hero__bg" src="assets/home/hero-global.png" alt="" width="1918" height="1203" decoding="async" />
+          </picture>
           <div class="fn-hero__copy">
             <h2 class="fn-hero__title"><span><strong>Connecting</strong> People,</span> Skills &amp; Careers Globally</h2>
             <p class="fn-hero__lead">FutureNest Placement connects skilled professionals with meaningful career opportunities across the USA. Through personalized support, smart recruitment, and access to trusted employers, we help candidates move from searching for jobs to building successful careers.</p>
           </div>
         </div>
         <div class="fn-hero__controls">
-          <button type="button" data-hero="pause" aria-label="Pause slideshow" aria-pressed="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14M16 5v14" fill="none" stroke="currentColor" stroke-width="3" /></svg></button>
-          <button type="button" data-hero="prev" aria-label="Previous slide">‹</button>
-          <button type="button" data-hero="next" aria-label="Next slide">›</button>
+          <button type="button" data-hero="pause" aria-label="Pause slideshow" aria-pressed="false" hidden><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14M16 5v14" fill="none" stroke="currentColor" stroke-width="3" /></svg></button>
+          <button type="button" data-hero="prev" aria-label="Previous slide">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <polyline points="15 18 9 12 15 6"></polyline>
+            </svg>
+          </button>
+          <button type="button" data-hero="next" aria-label="Next slide">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <polyline points="9 18 15 12 9 6"></polyline>
+            </svg>
+          </button>
         </div>
         <p class="fn-sr-only" id="hero-status" aria-live="polite" aria-atomic="true"></p>
       </section>
