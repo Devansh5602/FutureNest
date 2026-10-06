@@ -65,6 +65,8 @@ node scripts/check-browser.cjs
 
 This checks all five routes at 320, 440, 768, 1024, 1440, 1920, 2560, and 3440 pixels, plus service tabs, FAQs, carousels, mobile navigation, browser history, form validation, query-string prefills, and motion preferences. Screenshots are written to the ignored `.preview/` directory.
 
+Run `node scripts/check-client-changes.cjs` to check banner text containment, mobile card edges, FAQ contact links, and Home carousel looping, pause, and resume.
+
 Optional environment variables: `BASE_URL` selects another preview server, `CHROME_PATH` selects an installed Chromium browser, and `PLAYWRIGHT_MODULE` selects an existing Playwright installation.
 
 ## Deployment and integration boundaries

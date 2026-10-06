@@ -1,4 +1,5 @@
-.sv-tab__icon { display: none; }
+.sv-tab__icon { display: grid; place-items: center; flex: 0 0 44px; }
+.sv-tab__icon img { width: 44px; height: 44px; max-width: none; }
 
 @media (max-width: 700px) {
   .fn-services-page .sv-tabs {
@@ -36,7 +37,7 @@
     border-radius: 50%;
     background: white;
   }
-  .fn-services-page .sv-tab__icon svg { width: 23px; height: 23px; }
+  .fn-services-page .sv-tab__icon img { width: 38px; height: 38px; max-width: none; }
   .fn-services-page .sv-tab__label > span { display: block; }
 }
 
@@ -44,9 +45,9 @@
   .fn-services-page .fn-wrap { width: calc(100% - 32px); }
 
   .fn-services-page .sv-hero {
-    height: min(217.27vw, 956px);
-    min-height: 640px;
-    max-height: 956px;
+    height: auto;
+    min-height: clamp(640px, 100svh, 956px);
+    max-height: none;
     padding-bottom: 72px;
   }
   .fn-services-page .sv-hero__image { object-position: center top; }
@@ -179,8 +180,8 @@
   .fn-services-page .fn-live__controls button:disabled { opacity: 1; color: #687584; }
   .fn-services-page .fn-live__head h2 { font-size: 24px; }
   .fn-services-page .fn-live__row {
-    padding-left: 16px;
-    scroll-padding-left: 16px;
+    padding-inline: 16px;
+    scroll-padding-inline: 16px;
     gap: 12px;
   }
   .fn-services-page .fn-offer { flex-basis: 72%; padding: 16px; border-radius: 12px; }

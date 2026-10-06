@@ -43,6 +43,7 @@
 .fn-stories__more { display: inline-flex; justify-content: center; align-items: center; gap: 20px; min-height: 44px; margin-top: 64px; padding: 10px 24px; border: 1px solid #ffffffb3; border-radius: 32px; background: #07182c; color: white; font-size: 14px; font-weight: 400; }
 .fn-stories__more svg { width: 18px; height: 18px; }
 .fn-stories__more:hover { background: #173453; }
+.fn-story-grid::-webkit-scrollbar { display: none; }
 .fn-story-grid:focus-visible { outline: 3px solid var(--fn-gold); outline-offset: 4px; }
 @media (max-width: 900px) {
   .fn-story__caption { padding: 16px; }
@@ -54,7 +55,7 @@
   .fn-stories > .fn-wrap { width: calc(100% - 32px); }
   .fn-stories h2 { font-size: 24px; }
   .fn-stories > .fn-wrap > p { font-size: 13px; margin: 20px auto 28px; }
-  .fn-story-grid { grid-template-columns: none; grid-auto-columns: 82%; grid-auto-flow: column; grid-template-rows: repeat(2, 220px); overflow-x: auto; scroll-snap-type: x mandatory; touch-action: pan-x pan-y; gap: 12px; padding-bottom: 12px; }
+  .fn-story-grid { grid-template-columns: none; width: calc(100% + 32px); margin-inline: -16px; padding-inline: 16px; scroll-padding-inline: 16px; scrollbar-width: none; grid-auto-columns: 82%; grid-auto-flow: column; grid-template-rows: repeat(2, 220px); overflow-x: auto; scroll-snap-type: x mandatory; touch-action: pan-x pan-y; gap: 12px; padding-bottom: 12px; }
   .fn-story { aspect-ratio: auto; grid-column: auto; scroll-snap-align: start; border-radius: 16px; }
   .fn-story--tall { grid-row: span 2; }
   .fn-story--tall .fn-story__portrait { top: 0; height: 100%; }

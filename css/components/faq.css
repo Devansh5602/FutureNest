@@ -3,7 +3,7 @@
 .ab-faq { display:grid; grid-template-columns:1fr 1.82fr; align-items:start; gap:7%; padding-block:clamp(5.625rem,calc(var(--fn-layout-width) * 0.095),11.25rem) clamp(10.625rem,calc(var(--fn-layout-width) * 0.18),21.5625rem); }
 .ab-faq__intro { position:sticky; top:8.125rem; }
 .ab-faq__intro p { margin-top:1.125rem; }
-.ab-faq__intro a { text-decoration:underline; text-underline-offset:0.1875rem; }
+.ab-faq__intro a { white-space:nowrap; text-decoration:underline; text-underline-offset:0.1875rem; }
 .ab-faq__list { display:grid; gap:0.875rem; min-width:0; overflow-anchor:none; }
 .ab-faq__item { border-radius:0.875rem; background:var(--ab-faq); overflow:clip; scroll-margin-top:6.875rem; }
 .ab-faq__item summary { display:flex; align-items:flex-start; justify-content:space-between; gap:1.5rem; padding:1.375rem 1.5rem; list-style:none; cursor:pointer; font-size:clamp(0.875rem,calc(var(--fn-layout-width) * 0.011),1.3125rem); font-weight:700; line-height:1.4; }

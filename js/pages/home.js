@@ -10,11 +10,12 @@
     const slides = Array.from(hero.querySelectorAll('.fn-hero__slide'));
     const arrows = Array.from(hero.querySelectorAll('[data-hero="prev"], [data-hero="next"]'));
     const status = document.getElementById('hero-status');
+    const pause = hero.querySelector('[data-hero="pause"]');
     let index = 0;
     let timer;
     let moving = false;
     let focusPaused = false;
-    let hoverPaused = false;
+    let userPaused = false;
     let heroVisible = true;
     let animations = [];
 
@@ -33,7 +34,7 @@
 
     function schedule() {
       clearTimeout(timer);
-      if (!moving && !focusPaused && !hoverPaused &&
+      if (!moving && !focusPaused && !userPaused &&
           heroVisible && !document.hidden && !reduced.matches) {
         timer = setTimeout(() => show(index + 1, 1, false), 5000);
       }
@@ -83,10 +84,13 @@
       const direction = button.dataset.hero === 'next' ? 1 : -1;
       show(index + direction, direction, true);
     }));
-    hero.addEventListener('pointerenter', event => {
-      if (event.pointerType !== 'touch') { hoverPaused = true; schedule(); }
+    pause.addEventListener('click', () => {
+      userPaused = !userPaused;
+      pause.setAttribute('aria-pressed', String(userPaused));
+      pause.setAttribute('aria-label', userPaused ? 'Resume slideshow' : 'Pause slideshow');
+      pause.querySelector('path').setAttribute('d', userPaused ? 'm8 5 10 7-10 7Z' : 'M8 5v14M16 5v14');
+      schedule();
     });
-    hero.addEventListener('pointerleave', () => { hoverPaused = false; schedule(); });
     hero.addEventListener('focusin', () => { focusPaused = true; schedule(); });
     hero.addEventListener('focusout', event => {
       if (!hero.contains(event.relatedTarget)) { focusPaused = false; schedule(); }
@@ -144,6 +148,7 @@
     }
 
     reduced.addEventListener('change', () => {
+      pause.hidden = reduced.matches;
       if (reduced.matches) {
         animations.forEach(animation => animation.finish());
         document.querySelectorAll('.fn-why__grid, .fn-process__col, .fn-live')
@@ -151,6 +156,7 @@
       }
       schedule();
     });
+    pause.hidden = reduced.matches;
     schedule();
 
     const benefits = document.querySelector('.fn-why__grid');
@@ -178,4 +184,3 @@
 
   document.addEventListener('DOMContentLoaded', initHome);
 })();
-

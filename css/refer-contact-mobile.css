@@ -1,8 +1,8 @@
 @media (max-width:600px) {
   :is(.fn-refer-page,.fn-contact-page) .fn-wrap { width:calc(100% - 32px); }
-  .rf-hero,.ct-hero { height:217vw; min-height:720px; max-height:956px; padding-bottom:60px; }
-  .rf-hero__picture img,.ct-hero__image { object-position:center; }
-  .rf-hero::before { background:linear-gradient(transparent 45%,#10131838); }
+  .rf-hero,.ct-hero { height:auto; min-height:clamp(640px,100svh,956px); max-height:none; padding-bottom:60px; }
+  .rf-hero__picture img { object-position:80% center; }
+  .ct-hero__image { object-position:center; }
   .fn-refer-page .rf-hero h1,.fn-contact-page .ct-hero h1 { font-size:clamp(28px,8.2vw,36px); line-height:1.35; }
   .ct-hero h1 strong { display:block; }
   .rf-hero p,.ct-hero p { font-size:12px; line-height:1.65; margin-top:20px; }

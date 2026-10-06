@@ -1,7 +1,7 @@
 .fn-contact-page .nav__link.active { color:#a56400; }
 .fn-contact-page .nav__link.active::after { background:var(--fn-gold); }
 #main-content > .ct-hero:first-child { padding-top:0; }
-.ct-hero { position:relative; isolation:isolate; min-height:30.625rem; height:calc(var(--fn-layout-width) * 0.416); max-height:50rem; display:flex; align-items:end; padding-bottom:4.5%; color:white; }
+.ct-hero { position:relative; isolation:isolate; min-height:max(31.875rem,calc(var(--fn-layout-width) * 0.416)); height:auto; display:flex; align-items:end; padding-bottom:4.5%; color:white; }
 .ct-hero__image { position:absolute; inset:0; z-index:-1; width:100%; height:100%; object-fit:cover; }
 .ct-hero__copy { padding-top:8.75rem; text-align:center; }
 .fn-contact-page .ct-hero h1 { font-family:'Urbanist',sans-serif; font-size:clamp(2.5rem,calc(var(--fn-layout-width) * 0.0465),5.625rem); font-weight:500; letter-spacing:-.025em; line-height:1.25; }

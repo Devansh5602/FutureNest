@@ -1,7 +1,7 @@
 .ab-track-controls { display:none; }
 @media(max-width:600px) {
  .fn-about-page .fn-wrap { width:calc(100% - 32px); }
- .fn-about-page .ab-hero { height:217vw; min-height:660px; max-height:956px; padding-bottom:60px; }
+ .fn-about-page .ab-hero { height:auto; min-height:clamp(660px,100svh,956px); max-height:none; padding-bottom:60px; }
  .fn-about-page .ab-photo--hero { object-position:center; }
  .fn-about-page .ab-hero h1 { font-size:clamp(28px,7.7vw,36px); }
  .fn-about-page .ab-hero h1 br { display:none; }
@@ -10,7 +10,7 @@
  .ab-intro { padding-block:60px; text-align:center; }
  .ab-intro h2 { font-size:25px; }
  .ab-intro p { font-size:13px; }
- .ab-origin { min-height:805px; height:183vw; max-height:1000px; }
+ .ab-origin { min-height:805px; height:auto; max-height:none; }
  .ab-photo--origin { object-position:center; }
  .ab-origin__wrap { padding-block:48px; }
  .ab-origin h2 { font-size:24px; }
@@ -23,7 +23,7 @@
  .ab-service-grid li { border-radius:3px; min-height:94px; font-size:13px; padding:16px 12px; }
  .ab-section-head h2 { font-size:24px; }
  .ab-section-head p { font-size:13px; }
- .ab-track-viewport { overflow-x:auto; scrollbar-width:none; touch-action:pan-x pan-y; scroll-snap-type:x proximity; }
+ .ab-track-viewport { width:calc(100% + 32px); margin-inline:-16px; padding-inline:16px; scroll-padding-inline:16px; overflow-x:auto; scrollbar-width:none; touch-action:pan-x pan-y; scroll-snap-type:x proximity; }
  .ab-track-viewport::-webkit-scrollbar { display:none; }
  .ab-track-viewport:focus-visible { outline:3px solid var(--fn-gold); outline-offset:4px; }
  .ab-track-grid { width:270%; grid-template-columns:repeat(12,minmax(0,1fr)); grid-template-rows:repeat(2,210px); gap:14px; }

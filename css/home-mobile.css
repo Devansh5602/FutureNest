@@ -1,18 +1,18 @@
-.fn-mobile-hero,.fn-mobile-partners { display:none; }
+.fn-mobile-partners { display:none; }
 @media(max-width:600px) {
  .fn-homepage .header { width:100%; left:0; right:0; border-radius:0; }
  .fn-homepage .header .container { width:calc(100% - 32px); }
  .fn-homepage .logo__img { width:160px; }
  .fn-homepage .hamburger { background:#f7f7f9; border-radius:6px; }
  .fn-homepage .fn-wrap { width:calc(100% - 32px); }
- .fn-homepage .fn-hero { display:none; }
- #main-content>.fn-mobile-hero:first-child { padding-top:0; }
- .fn-mobile-hero { display:flex; position:relative; isolation:isolate; align-items:flex-end; min-height:650px; height:174vw; max-height:956px; color:white; padding-bottom:64px; }
- .fn-mobile-hero>img { position:absolute; z-index:-1; inset:0; width:100%; height:100%; object-fit:cover; }
- .fn-mobile-hero .fn-wrap { text-align:center; }
- .fn-mobile-hero h1 { font-size:clamp(28px,7.7vw,36px); line-height:1.3; font-weight:500; }
- .fn-mobile-hero h1 strong { display:block; color:var(--fn-gold); font-weight:800; margin-top:8px; }
- .fn-mobile-hero p { margin:22px auto 0; font-size:12px; line-height:1.65; max-width:37ch; }
+ .fn-homepage .fn-hero { min-height: max(42rem, 100svh); }
+ .fn-homepage .fn-hero__copy { width: calc(100% - 32px); margin-inline: 16px; padding-top: 120px; padding-bottom: 104px; }
+ .fn-homepage .fn-hero__title,
+ .fn-homepage .fn-hero__slide:nth-child(2) .fn-hero__title { font-size: clamp(28px, 7.5vw, 36px); max-width: none; }
+ .fn-homepage .fn-hero__lead { max-width: 34ch; font-size: 14px; line-height: 1.65; }
+ .fn-homepage .fn-hero__bg { object-position: 56% center; }
+ .fn-homepage .fn-hero__slide:nth-child(2) .fn-hero__bg { object-position: 54% center; }
+ .fn-homepage .fn-hero__controls { right: 16px; bottom: 32px; }
  .fn-mobile-partners { display:block; text-align:center; font-size:22px; margin-bottom:45px; }
  .fn-homepage .fn-marquee { padding-block:50px; }
  .fn-homepage .fn-about__split { text-align:center; gap:20px; }
@@ -37,8 +37,9 @@
  .fn-homepage .fn-live::before { background:none; }
  .fn-homepage .fn-live__head { margin-left:16px; padding-right:16px; margin-bottom:32px; }
  .fn-homepage .fn-live__head h2 { font-size:24px; }
- .fn-homepage .fn-live__row { padding-left:16px; scroll-padding-left:16px; gap:12px; }
- .fn-homepage .fn-offer { flex-basis:55%; padding:16px; border-radius:12px; }
+ .fn-homepage .fn-live > .fn-wrap { width:100%; }
+ .fn-homepage .fn-live__row { padding-inline:16px; scroll-padding-inline:16px; gap:12px; }
+ .fn-homepage .fn-offer { flex-basis:72%; padding:16px; border-radius:12px; }
  .fn-homepage .fn-offer__meta { font-size:9px; gap:4px; }
  .fn-homepage .fn-offer h3 { font-size:22px; margin-top:16px; }
  .fn-homepage .fn-offer__role { font-size:11px; }
