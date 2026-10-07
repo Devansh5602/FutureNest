@@ -20,7 +20,7 @@
 .fn-home .header { width:min(90%,calc(var(--fn-content-max) + 5rem)); left:50%; right:auto; transform:translateX(-50%); border-radius:0 0 1.125rem 1.125rem; }
 .fn-home .header .container { width:90%; padding-inline:0; }
 .fn-home .header__inner { min-height:clamp(4.5rem,calc(var(--fn-layout-width) * 0.0527),6.3125rem); }
-.fn-home .logo__img { width:clamp(9.8125rem,calc(var(--fn-layout-width) * 0.125),11.25rem); height:auto; }
+.fn-home .logo__img { width:clamp(9.8125rem,calc(var(--fn-layout-width) * 0.125),10rem); height:auto; aspect-ratio: 2.5; }
 .fn-home .nav { gap:clamp(1.25rem,calc(var(--fn-layout-width) * 0.026),3.125rem); }
 .fn-home .nav__link { font-size:clamp(0.875rem,calc(var(--fn-layout-width) * 0.0105),1.25rem); }
 .fn-home .btn--header { min-height:2.75rem; font-size:clamp(0.8125rem,calc(var(--fn-layout-width) * 0.0094),1.125rem); }
