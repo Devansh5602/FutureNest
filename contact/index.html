@@ -125,13 +125,13 @@
         </div>
         <div class="ct-grid">
           <div class="ct-cards" aria-label="Contact information">
-            <div class="ct-card"><span class="ct-icon"><svg aria-hidden="true"><use href="#i-mail" /></svg></span><h3>Email</h3><span>Details coming soon</span></div>
-            <div class="ct-card"><span class="ct-icon"><svg aria-hidden="true"><use href="#i-phone" /></svg></span><h3>Phone</h3><span>Details coming soon</span></div>
+            <div class="ct-card"><span class="ct-icon"><svg aria-hidden="true"><use href="#i-mail" /></svg></span><h3>Email</h3><a href="mailto:info@futurenestplacements.com">info@futurenestplacements.com</a></div>
+            <div class="ct-card"><span class="ct-icon"><svg aria-hidden="true"><use href="#i-phone" /></svg></span><h3>Phone</h3><a href="tel:+12402314566">+1 240-231-4566</a></div>
             <div class="ct-card"><span class="ct-icon"><svg aria-hidden="true"><use href="#i-pin" /></svg></span><h3>Address</h3><p>N Orange St.,<br />Wilmington, DE, US, 19801</p></div>
             <div class="ct-card"><span class="ct-icon"><svg aria-hidden="true"><use href="#i-clock" /></svg></span><h3>Service Time</h3><p>Send a message anytime</p></div>
           </div>
           <div id="refer" class="ct-form-wrap">
-            <form class="ct-form" id="contact-form" aria-labelledby="talk-heading" aria-describedby="contact-help">
+            <form class="ct-form" id="contact-form" action="mailto:info@futurenestplacements.com" method="post" enctype="text/plain" aria-labelledby="talk-heading" aria-describedby="contact-help">
               <div class="ct-form__row">
                 <div class="ct-field"><label for="contact-name">Name<span aria-hidden="true">*</span></label><input id="contact-name" name="name" autocomplete="name" required maxlength="100" /></div>
                 <div class="ct-field"><label for="contact-email">Email<span aria-hidden="true">*</span></label><input id="contact-email" name="email" type="email" autocomplete="email" required maxlength="254" /></div>
@@ -139,7 +139,7 @@
               <div class="ct-field"><label for="contact-phone">Contact Number<span aria-hidden="true">*</span></label><input id="contact-phone" name="phone" type="tel" autocomplete="tel" required maxlength="40" /></div>
               <div class="ct-field"><label for="contact-message">Message<span aria-hidden="true">*</span></label><textarea id="contact-message" name="message" rows="4" required maxlength="2000"></textarea></div>
               <button class="ct-submit" type="submit" disabled>Submit</button>
-              <p id="contact-help" class="ct-help">All fields are required. This form is a preview; messages are not sent yet.</p>
+              <p id="contact-help" class="ct-help">All fields are required. Inquiries are directed to info@futurenestplacements.com.</p>
               <div class="ct-result" id="contact-result" hidden>
                 <p id="contact-status" role="status"></p>
               </div>
@@ -186,7 +186,10 @@
           <div>
             <h3>CORPORATE ADDRESS</h3>
             <p>N Orange St.,<br />Wilmington, DE, US, 19801</p>
-            <p style="margin-top:0.8rem"><span>Details coming soon</span></p>
+            <p style="margin-top:0.8rem">
+              <a href="mailto:info@futurenestplacements.com">info@futurenestplacements.com</a><br />
+              <a href="tel:+12402314566">+1 240-231-4566</a>
+            </p>
           </div>
           <div>
             <h3 style="letter-spacing:0;font-size:1.15rem;text-transform:none">Join our community to receive updates</h3>
@@ -196,7 +199,7 @@
             </form>
             <p class="fn-note" id="subscription-status" role="status">Get career news and placement updates.</p>
             <div class="fn-social" aria-label="Social media">
-              <span aria-label="LinkedIn">in</span>
+              <a href="https://www.linkedin.com/company/futurenest01/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">in</a>
               <span aria-label="Instagram">ig</span>
               <span aria-label="Facebook">f</span>
               <span aria-label="YouTube">▶</span>

@@ -50,7 +50,7 @@
       inputs.forEach(validate);
       if (!contactForm.reportValidity()) return;
       result.hidden = false;
-      status.textContent = 'Your entries are valid. This form is a preview; no message has been sent.';
+      status.textContent = 'Your entries are valid. Thank you! Your inquiry has been prepared for info@futurenestplacements.com (in preview mode, no message has been sent).';
     });
 
     document.querySelectorAll('a[href="#contact-form"]').forEach(function (link) {
