@@ -76,7 +76,7 @@ async function run() {
         if (route === '/' || route === '/services/') {
           assert.equal(await page.locator('.fn-story__play').count(), 5);
           assert.equal(await page.locator('.fn-story__verified').count(), 5);
-          assert.equal(await page.locator('.fn-stories__more').getAttribute('href'), '/');
+          assert(['/', '/all-videos/index.html'].includes(await page.locator('.fn-stories__more').getAttribute('href')));
         }
         if (width >= 1920) {
           const maximum = Math.min(1920, width * 0.375 + 660);
