@@ -59,8 +59,9 @@
  .fn-homepage .fn-offer h3 { font-size:22px; margin-top:16px; }
  .fn-homepage .fn-offer__role { font-size:11px; }
  .fn-homepage .fn-chips span { font-size:10px; padding:3px 6px; }
- .fn-homepage .fn-offer__photo { height:145px; }
- .fn-homepage .fn-offer__company { font-size:25px; }
+ .fn-homepage .fn-offer__photo { height:145px; padding:12px; }
+ .fn-homepage .fn-offer__company { font-size:25px; line-height:1.2; text-align:center; }
+ .fn-homepage .fn-offer__company--sm { font-size:16px; }
  .fn-homepage .fn-process { padding-bottom:200px; }
  .fn-homepage .fn-process__grid { border-radius:0 0 16px 16px; }
  .fn-homepage .fn-process__col { padding:36px 26px; }
