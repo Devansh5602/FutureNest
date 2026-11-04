@@ -119,17 +119,18 @@
 .fn-live__controls button:disabled { opacity:.4; cursor:default; }
 .fn-live__row { display:flex; gap:clamp(1.125rem,calc(var(--fn-layout-width) * 0.021),2.5rem); overflow-x:auto; scroll-snap-type:x mandatory; scrollbar-width:none; padding:0.25rem 2.5rem 0.75rem 0.25rem; touch-action:pan-x pan-y; }
 .fn-live__row::-webkit-scrollbar { display:none; }
-.fn-offer { flex:0 0 clamp(16.875rem,calc(var(--fn-layout-width) * 0.195),23.375rem); scroll-snap-align:start; border-radius:1.25rem; background:white; color:#171717; padding:1.375rem; box-shadow:0 0.75rem 1.875rem #0002; }
-.fn-offer__meta { display:flex; justify-content:space-between; align-items:center; gap:0.625rem; font-size:0.75rem; color:#777; }
-.fn-live-dot { background:#ffeaea; color:#d8344c; padding:0.125rem 0.4375rem; border-radius:1.25rem; }
+.fn-offer { display:flex; flex-direction:column; flex:0 0 clamp(16.875rem,calc(var(--fn-layout-width) * 0.195),23.375rem); scroll-snap-align:start; border-radius:1.25rem; background:white; color:#171717; padding:1.5rem; box-shadow:0 0.75rem 1.875rem #0002; box-sizing:border-box; }
+.fn-offer__meta { display:flex; justify-content:space-between; align-items:center; gap:0.625rem; font-size:0.75rem; color:#777; flex-shrink:0; }
+.fn-live-dot { background:#ffeaea; color:#d8344c; padding:0.125rem 0.4375rem; border-radius:1.25rem; font-weight:600; }
 .fn-live-dot::before { content:''; display:inline-block; width:0.3125rem; height:0.3125rem; margin-right:0.25rem; background:currentColor; border-radius:50%; }
-.fn-offer h3 { margin-top:1.25rem; font-size:clamp(1.25rem,calc(var(--fn-layout-width) * 0.016),1.75rem); line-height:1.25; min-height:auto; font-weight:750; }
-.fn-offer__role { font-size:0.875rem; color:#727272; margin:0.375rem 0 0.75rem; min-height:2.6em; display:flex; align-items:flex-start; }
-.fn-chips { display:flex; gap:0.4375rem; flex-wrap:wrap; }
-.fn-chips span { background:#f2f2f2; border-radius:1.25rem; padding:0.25rem 0.625rem; font-size:0.75rem; color:#555; font-weight:600; }
-.fn-offer__photo { display:grid; place-items:center; height:clamp(10.625rem,calc(var(--fn-layout-width) * 0.127),15.1875rem); margin-top:1.375rem; border-radius:0.875rem; background:linear-gradient(120deg,#e7f6e7,#f0faee); padding:0.75rem; text-align:center; overflow:hidden; }
-.fn-offer__img { width:100%; height:100%; max-height:100%; object-fit:contain; display:block; transition:transform .3s ease; }
-.fn-offer:hover .fn-offer__img { transform:scale(1.03); }
+.fn-offer h3 { margin-top:0; font-size:clamp(1.25rem,calc(var(--fn-layout-width) * 0.016),1.65rem); line-height:1.25; font-weight:750; min-height:2rem; display:flex; align-items:center; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+.fn-offer__role { font-size:0.875rem; color:#727272; margin:0.375rem 0 0.875rem; height:2.75rem; line-height:1.375; display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical; overflow:hidden; }
+.fn-chips { display:flex; gap:0.4375rem; flex-wrap:wrap; align-items:center; margin-top:auto; margin-bottom:0; }
+.fn-chips span { background:#f2f2f2; border-radius:1.25rem; padding:0.25rem 0.625rem; font-size:0.75rem; color:#555; font-weight:600; white-space:nowrap; }
+.fn-offer__photo { position:relative; display:block; width:100%; height:clamp(10.5rem,calc(var(--fn-layout-width) * 0.122),14.25rem); aspect-ratio:4/3; margin-top:0; margin-bottom:1.125rem; border-radius:0.875rem; background:#ffffff; padding:0; text-align:center; overflow:hidden; box-shadow:inset 0 0 0 1px rgba(0,0,0,0.06); }
+.fn-offer__photo picture { display:contents; }
+.fn-offer__img { width:100%; height:100%; max-height:100%; object-fit:cover; object-position:center; display:block; border-radius:0.875rem; transition:transform 0.4s cubic-bezier(0.2,0.8,0.3,1); }
+.fn-offer:hover .fn-offer__img { transform:scale(1.05); }
 .fn-offer__company { color:#111; font-family:Arial,sans-serif; font-size:1.875rem; font-weight:800; letter-spacing:-0.1125rem; line-height:1.2; text-align:center; }
 .fn-offer__company--sm { font-size:clamp(1.125rem,calc(var(--fn-layout-width) * 0.013),1.375rem); letter-spacing:-0.03rem; font-weight:750; }
 .fn-offer__company span { color:#82bc00; }

@@ -184,12 +184,13 @@
     scroll-padding-inline: 16px;
     gap: 12px;
   }
-  .fn-services-page .fn-offer { flex-basis: 72%; padding: 16px; border-radius: 12px; }
+  .fn-services-page .fn-offer { flex-basis: 72%; padding: 16px; border-radius: 12px; display: flex; flex-direction: column; }
   .fn-services-page .fn-offer__meta { font-size: 9px; }
-  .fn-services-page .fn-offer h3 { font-size: 22px; margin-top: 16px; }
-  .fn-services-page .fn-offer__role { font-size: 11px; }
+  .fn-services-page .fn-offer h3 { font-size: 20px; margin-top: 0; min-height: 1.6rem; display: flex; align-items: center; }
+  .fn-services-page .fn-offer__role { font-size: 11px; height: 2.4rem; line-height: 1.35; margin: 4px 0 8px; }
+  .fn-services-page .fn-chips { margin-top: auto; margin-bottom: 0; }
   .fn-services-page .fn-chips span { font-size: 10px; padding: 3px 6px; }
-  .fn-services-page .fn-offer__photo { height: 145px; padding: 12px; }
+  .fn-services-page .fn-offer__photo { height: 150px; padding: 0; margin-top: 0; margin-bottom: 12px; }
   .fn-services-page .fn-offer__company { font-size: 25px; line-height: 1.2; text-align: center; }
   .fn-services-page .fn-offer__company--sm { font-size: 16px; }
 
