@@ -95,10 +95,11 @@
 
 .vd-grid {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: clamp(1rem, calc(var(--fn-layout-width) * 0.014), 1.5rem);
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  max-width: 980px;
+  margin: 0 auto;
+  gap: clamp(1.25rem, calc(var(--fn-layout-width) * 0.018), 2rem);
   list-style: none;
-  margin: 0;
   padding: 0;
 }
 
@@ -109,26 +110,29 @@
   position: relative;
   isolation: isolate;
   overflow: hidden;
-  border-radius: 1.125rem;
-  aspect-ratio: 500 / 356;
+  border-radius: 1.25rem;
+  aspect-ratio: 16 / 9;
   background: #142747;
-  border: 1px solid rgba(0, 0, 0, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.12);
   box-shadow: 0 4px 16px rgba(10, 25, 47, 0.06);
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
   transition: transform 0.3s cubic-bezier(0.2, 0.8, 0.3, 1), box-shadow 0.3s cubic-bezier(0.2, 0.8, 0.3, 1), border-color 0.3s ease;
 }
 
 [data-theme="dark"] .vd-card {
-  border-color: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.14);
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.35);
 }
 
 .vd-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 14px 32px rgba(10, 25, 47, 0.16);
-  border-color: rgba(245, 166, 35, 0.35);
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.45);
+  border-color: rgba(245, 166, 35, 0.5);
 }
 
 [data-theme="dark"] .vd-card:hover {
@@ -208,14 +212,15 @@
 
 .vd-card__name {
   font-family: 'Urbanist', var(--font-display, sans-serif);
-  font-size: clamp(1rem, calc(var(--fn-layout-width) * 0.011), 1.18rem);
+  font-size: clamp(0.95rem, calc(var(--fn-layout-width) * 0.011), 1.15rem);
   font-weight: 600;
   color: #ffffff !important;
   margin: 0;
-  line-height: 1.2;
-  white-space: nowrap;
+  line-height: 1.3;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
   overflow: hidden;
-  text-overflow: ellipsis;
 }
 
 .vd-card__role {

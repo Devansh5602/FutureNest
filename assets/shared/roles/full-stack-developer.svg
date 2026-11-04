@@ -1,0 +1,92 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 180" width="100%" height="100%">
+  <defs>
+    <linearGradient id="fs-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0f172a"/>
+      <stop offset="100%" stop-color="#1e293b"/>
+    </linearGradient>
+    <linearGradient id="fs-fe" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0284c7"/>
+      <stop offset="100%" stop-color="#38bdf8"/>
+    </linearGradient>
+    <linearGradient id="fs-api" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#7c3aed"/>
+      <stop offset="100%" stop-color="#a855f7"/>
+    </linearGradient>
+    <linearGradient id="fs-db" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#059669"/>
+      <stop offset="100%" stop-color="#10b981"/>
+    </linearGradient>
+    <filter id="fs-shadow" x="-8%" y="-10%" width="116%" height="125%" filterUnits="userSpaceOnUse">
+      <feDropShadow dx="0" dy="6" stdDeviation="6" flood-color="#0f172a" flood-opacity="0.25"/>
+    </filter>
+  </defs>
+
+  <!-- Main Background Container -->
+  <g filter="url(#fs-shadow)">
+    <rect x="24" y="20" width="272" height="140" rx="12" fill="url(#fs-bg)"/>
+    <rect x="24" y="20" width="272" height="140" rx="12" fill="none" stroke="#334155" stroke-width="1"/>
+
+    <!-- Left Side: 3-Tier Layer Architecture -->
+    <!-- Layer 1: Frontend Client (Top) -->
+    <g transform="translate(42, 32)">
+      <rect x="0" y="0" width="128" height="30" rx="6" fill="#1e293b" stroke="#0284c7" stroke-width="1.2"/>
+      <circle cx="12" cy="15" r="4" fill="#38bdf8"/>
+      <text x="24" y="19" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,sans-serif" font-size="9.5" font-weight="700" fill="#38bdf8">FRONTEND</text>
+      <!-- Mini Browser Window Dots -->
+      <circle cx="106" cy="15" r="2.5" fill="#ef4444"/>
+      <circle cx="114" cy="15" r="2.5" fill="#f59e0b"/>
+      <circle cx="122" cy="15" r="2.5" fill="#10b981"/>
+    </g>
+
+    <!-- Connector: Frontend to Backend API -->
+    <path d="M 106 62 L 106 74" stroke="#38bdf8" stroke-width="2" stroke-linecap="round" stroke-dasharray="3 3"/>
+    <polygon points="106,75 103,70 109,70" fill="#a855f7"/>
+
+    <!-- Layer 2: API / Cloud Logic (Middle) -->
+    <g transform="translate(42, 75)">
+      <rect x="0" y="0" width="128" height="30" rx="6" fill="#1e293b" stroke="#7c3aed" stroke-width="1.2"/>
+      <circle cx="12" cy="15" r="4" fill="#a855f7"/>
+      <text x="24" y="19" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,sans-serif" font-size="9.5" font-weight="700" fill="#c084fc">BACKEND / API</text>
+      <text x="110" y="19" font-family="monospace" font-size="9" fill="#94a3b8" text-anchor="middle">{;}</text>
+    </g>
+
+    <!-- Connector: Backend to Database -->
+    <path d="M 106 105 L 106 117" stroke="#a855f7" stroke-width="2" stroke-linecap="round" stroke-dasharray="3 3"/>
+    <polygon points="106,118 103,113 109,113" fill="#10b981"/>
+
+    <!-- Layer 3: Database Storage (Bottom) -->
+    <g transform="translate(42, 118)">
+      <rect x="0" y="0" width="128" height="30" rx="6" fill="#1e293b" stroke="#059669" stroke-width="1.2"/>
+      <circle cx="12" cy="15" r="4" fill="#10b981"/>
+      <text x="24" y="19" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,sans-serif" font-size="9.5" font-weight="700" fill="#34d399">DATABASE / SQL</text>
+      <!-- DB disk cylinder glyph -->
+      <ellipse cx="114" cy="12" rx="7" ry="2.5" fill="#10b981"/>
+      <path d="M 107 12 L 107 18 A 7 2.5 0 0 0 121 18 L 121 12 Z" fill="#059669"/>
+    </g>
+
+    <!-- Right Side: Full Stack Badge & Code Flow -->
+    <g transform="translate(186, 38)">
+      <!-- Central Circular Hub -->
+      <circle cx="48" cy="48" r="40" fill="#14315c" stroke="#334155" stroke-width="1.5"/>
+      <circle cx="48" cy="48" r="32" fill="#0f172a"/>
+
+      <!-- Rotating Gear / Stack Symbol -->
+      <path d="M 38 48 L 44 42 L 44 45 L 52 45 L 52 42 L 58 48 L 52 54 L 52 51 L 44 51 L 44 54 Z" fill="#38bdf8"/>
+      <circle cx="48" cy="48" r="4" fill="#34d399"/>
+
+      <!-- Orbiting Tech Nodes -->
+      <circle cx="48" cy="12" r="5" fill="#38bdf8"/>
+      <circle cx="84" cy="48" r="5" fill="#a855f7"/>
+      <circle cx="48" cy="84" r="5" fill="#10b981"/>
+      <circle cx="12" cy="48" r="5" fill="#fbbf24"/>
+
+      <!-- Orbit Path -->
+      <circle cx="48" cy="48" r="36" fill="none" stroke="#334155" stroke-width="1" stroke-dasharray="3 3"/>
+    </g>
+
+    <!-- Label Pill -->
+    <rect x="194" y="132" width="80" height="18" rx="9" fill="#38bdf8" fill-opacity="0.15"/>
+    <text x="234" y="144" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,sans-serif" font-size="8.5" font-weight="700" fill="#38bdf8" text-anchor="middle">FULL STACK</text>
+  </g>
+</svg>
+

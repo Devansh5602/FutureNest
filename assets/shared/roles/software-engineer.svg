@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 180" width="100%" height="100%">
+  <defs>
+    <linearGradient id="se-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0f172a"/>
+      <stop offset="100%" stop-color="#1e293b"/>
+    </linearGradient>
+    <linearGradient id="se-accent" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38bdf8"/>
+      <stop offset="100%" stop-color="#818cf8"/>
+    </linearGradient>
+    <filter id="se-shadow" x="-8%" y="-10%" width="116%" height="125%" filterUnits="userSpaceOnUse">
+      <feDropShadow dx="0" dy="6" stdDeviation="6" flood-color="#0f172a" flood-opacity="0.25"/>
+    </filter>
+  </defs>
+
+  <!-- Editor Window Card -->
+  <g filter="url(#se-shadow)">
+    <rect x="24" y="20" width="272" height="140" rx="12" fill="url(#se-bg)"/>
+    <rect x="24" y="20" width="272" height="140" rx="12" fill="none" stroke="#334155" stroke-width="1"/>
+    
+    <!-- Titlebar -->
+    <path d="M 24 32 Q 24 20 36 20 L 284 20 Q 296 20 296 32 L 296 44 L 24 44 Z" fill="#1e293b"/>
+    <circle cx="42" cy="32" r="4.5" fill="#ef4444"/>
+    <circle cx="56" cy="32" r="4.5" fill="#f59e0b"/>
+    <circle cx="70" cy="32" r="4.5" fill="#10b981"/>
+    <rect x="94" y="26" width="76" height="12" rx="4" fill="#0f172a" opacity="0.6"/>
+    <text x="132" y="35.5" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,sans-serif" font-size="8" fill="#94a3b8" text-anchor="middle" font-weight="600">developer.ts</text>
+    
+    <!-- Editor Content -->
+    <!-- Line 1: import / keyword -->
+    <rect x="42" y="56" width="34" height="6" rx="3" fill="#818cf8"/>
+    <rect x="82" y="56" width="46" height="6" rx="3" fill="#38bdf8"/>
+    <rect x="134" y="56" width="24" height="6" rx="3" fill="#94a3b8"/>
+    <rect x="164" y="56" width="52" height="6" rx="3" fill="#34d399"/>
+    
+    <!-- Line 2: function declaration -->
+    <rect x="42" y="70" width="48" height="6" rx="3" fill="#c084fc"/>
+    <rect x="96" y="70" width="58" height="6" rx="3" fill="#fbbf24"/>
+    <circle cx="160" cy="73" r="3" fill="#94a3b8"/>
+    
+    <!-- Line 3 (indented) -->
+    <rect x="58" y="84" width="36" height="6" rx="3" fill="#38bdf8"/>
+    <rect x="100" y="84" width="50" height="6" rx="3" fill="#f472b6"/>
+    <rect x="156" y="84" width="38" height="6" rx="3" fill="#34d399"/>
+    
+    <!-- Line 4 (indented) -->
+    <rect x="58" y="98" width="54" height="6" rx="3" fill="#818cf8"/>
+    <rect x="118" y="98" width="42" height="6" rx="3" fill="#38bdf8"/>
+    <rect x="166" y="98" width="28" height="6" rx="3" fill="#fbbf24"/>
+    
+    <!-- Line 5: return -->
+    <rect x="58" y="112" width="40" height="6" rx="3" fill="#c084fc"/>
+    <rect x="104" y="112" width="60" height="6" rx="3" fill="#34d399"/>
+    
+    <!-- Line 6: close brace -->
+    <rect x="42" y="126" width="12" height="6" rx="3" fill="#94a3b8"/>
+  </g>
+
+  <!-- Floating Badge: < / > -->
+  <g transform="translate(224, 78)">
+    <circle cx="26" cy="26" r="26" fill="url(#se-accent)" filter="url(#se-shadow)"/>
+    <circle cx="26" cy="26" r="22" fill="#0f172a"/>
+    <!-- < / > code icon -->
+    <path d="M 18 26 L 22 22 M 18 26 L 22 30" stroke="#38bdf8" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M 28 20 L 24 32" stroke="#818cf8" stroke-width="2" stroke-linecap="round"/>
+    <path d="M 34 26 L 30 22 M 34 26 L 30 30" stroke="#38bdf8" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+</svg>
+

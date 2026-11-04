@@ -105,12 +105,43 @@
     updateEdges();
   }
 
+  function bindOpportunityFilters() {
+    const sections = document.querySelectorAll('.fn-opportunities');
+    sections.forEach(function (section) {
+      const filterBtns = section.querySelectorAll('.fn-opp-filter-btn');
+      const cards = section.querySelectorAll('.fn-opp-card');
+      if (!filterBtns.length || !cards.length) return;
+
+      filterBtns.forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          const filter = this.getAttribute('data-filter') || 'all';
+          filterBtns.forEach(function (b) {
+            b.classList.remove('is-active');
+            b.setAttribute('aria-pressed', 'false');
+          });
+          this.classList.add('is-active');
+          this.setAttribute('aria-pressed', 'true');
+
+          cards.forEach(function (card) {
+            const cat = card.getAttribute('data-category') || '';
+            if (filter === 'all' || cat === filter) {
+              card.removeAttribute('hidden');
+            } else {
+              card.setAttribute('hidden', '');
+            }
+          });
+        });
+      });
+    });
+  }
+
   document.addEventListener('DOMContentLoaded', function () {
     document.body.classList.add('page-fade-in');
     const year = document.getElementById('footer-year');
     if (year) year.textContent = new Date().getFullYear();
     bindMobileMenu();
     bindNewsletter();
+    bindOpportunityFilters();
     bindCardRow(
       document.getElementById('live-row'),
       document.querySelector('[data-live="prev"]'),
