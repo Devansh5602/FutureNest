@@ -47,13 +47,14 @@
   .ct-field label { font-size:13px; }
   .ct-field input,.ct-field textarea { font-size:16px; }
   .ct-submit { width:auto; min-width:100px; }
-  :is(.fn-refer-page,.fn-contact-page) .fn-cta { background:#eda720; padding:0 0 52px; }
-  :is(.fn-refer-page,.fn-contact-page) .fn-cta picture { display:flow-root; }
-  :is(.fn-refer-page,.fn-contact-page) .fn-cta__portrait { position:relative; z-index:0; display:block; right:auto; bottom:auto; width:100%; height:auto; margin-top:-34vw; }
-  :is(.fn-refer-page,.fn-contact-page) .fn-cta h2 { width:100%; font-size:26px; margin-top:22px; }
-  :is(.fn-refer-page,.fn-contact-page) .fn-cta__actions { max-width:none; gap:10px; margin-top:34px; }
+  :is(.fn-refer-page,.fn-contact-page) .fn-cta { background:radial-gradient(at 65% 50%,#f5ac25,#c57f00); padding:0 16px 44px; overflow:visible; position:relative; text-align:center; margin-top:clamp(60px,16vw,90px); }
+  :is(.fn-refer-page,.fn-contact-page) .fn-cta picture { display:contents; }
+  :is(.fn-refer-page,.fn-contact-page) .fn-cta__portrait { --fn-advisor-w:min(78vw,300px); position:relative; z-index:1; display:block; right:auto; bottom:auto; width:var(--fn-advisor-w); max-width:none; height:auto; margin:0 auto; top:calc(-0.44 * var(--fn-advisor-w) * (895 / 934)); margin-bottom:calc(-0.44 * var(--fn-advisor-w) * (895 / 934) + 18px); object-fit:contain; pointer-events:none; }
+  :is(.fn-refer-page,.fn-contact-page) .fn-cta h2 { width:100%; max-width:none; font-size:clamp(20px,5.6vw,25px); line-height:1.25; margin:0 0 20px; text-align:center; }
+  :is(.fn-refer-page,.fn-contact-page) .fn-cta h2 strong { text-transform:uppercase; display:block; }
+  :is(.fn-refer-page,.fn-contact-page) .fn-cta__actions { max-width:none; width:100%; display:flex; flex-direction:row; flex-wrap:wrap; justify-content:center; align-items:center; gap:12px; margin-top:0; }
   :is(.fn-refer-page,.fn-contact-page) .fn-cta .btn--header,
-  :is(.fn-refer-page,.fn-contact-page) .fn-cta__ghost { padding-inline:18px; font-size:13px; }
+  :is(.fn-refer-page,.fn-contact-page) .fn-cta__ghost { padding:9px 18px; font-size:13px; min-height:36px; white-space:nowrap; flex:0 0 auto; display:inline-flex; align-items:center; justify-content:center; }
   :is(.fn-refer-page,.fn-contact-page) .fn-footer__grid { display:flex; flex-direction:column; gap:36px; }
   :is(.fn-refer-page,.fn-contact-page) .fn-footer__grid>div:last-child { order:-1; border-bottom:1px solid #ffffff30; padding-bottom:32px; }
 }
@@ -63,5 +64,5 @@
   .ct-form__row { grid-template-columns:1fr; gap:0; }
   .ct-form { padding:24px 18px; }
   .ct-cards { gap:12px; }
-  :is(.fn-refer-page,.fn-contact-page) .fn-cta__actions>a { flex:1 1 140px; }
+  :is(.fn-refer-page,.fn-contact-page) .fn-cta__actions>a { flex:0 0 auto; }
 }

@@ -162,6 +162,8 @@
     padding-block: 45px;
     background-image: url('../assets/services/mobile/placements.png');
     background-position: center top;
+    background-size: auto 100%;
+    background-repeat: no-repeat;
   }
   .fn-services-page .fn-live > .fn-wrap { width: 100%; }
   .fn-services-page .fn-live__head {
@@ -180,11 +182,14 @@
   .fn-services-page .fn-live__controls button:disabled { opacity: 1; color: #687584; }
   .fn-services-page .fn-live__head h2 { font-size: 24px; }
   .fn-services-page .fn-live__row {
-    padding-inline: 16px;
-    scroll-padding-inline: 16px;
-    gap: 12px;
+    padding-inline: 0;
+    overflow: hidden;
   }
-  .fn-services-page .fn-offer { flex-basis: 72%; padding: 16px; border-radius: 12px; display: flex; flex-direction: column; }
+  .fn-services-page .fn-live__group {
+    gap: 12px;
+    padding-right: 12px;
+  }
+  .fn-services-page .fn-offer { flex: 0 0 260px; width: 260px; padding: 16px; border-radius: 12px; display: flex; flex-direction: column; }
   .fn-services-page .fn-offer__meta { font-size: 9px; }
   .fn-services-page .fn-offer h3 { font-size: 20px; margin-top: 0; min-height: 1.6rem; display: flex; align-items: center; }
   .fn-services-page .fn-offer__role { font-size: 11px; height: 2.4rem; line-height: 1.35; margin: 4px 0 8px; }
@@ -223,22 +228,29 @@
   .fn-services-page .ab-faq__item { border-radius: 5px; }
   .fn-services-page .ab-faq__item summary { padding: 14px 12px; font-size: 12px; gap: 10px; }
 
-  .fn-services-page .fn-cta { background: #eda720; padding: 0 0 52px; }
+  .fn-services-page .fn-cta { background: radial-gradient(at 65% 50%, #f5ac25, #c57f00); padding: 0 16px 44px; overflow: visible; position: relative; text-align: center; margin-top: clamp(60px, 16vw, 90px); }
+  .fn-services-page .fn-cta picture { display: contents; }
   .fn-services-page .fn-cta__portrait {
+    --fn-advisor-w: min(78vw, 300px);
     position: relative;
-    z-index: 0;
+    z-index: 1;
     display: block;
     right: auto;
     bottom: auto;
-    width: 100%;
+    width: var(--fn-advisor-w);
+    max-width: none;
     height: auto;
-    margin-top: -34vw;
+    margin: 0 auto;
+    top: calc(-0.44 * var(--fn-advisor-w) * (895 / 934));
+    margin-bottom: calc(-0.44 * var(--fn-advisor-w) * (895 / 934) + 18px);
     object-fit: contain;
+    pointer-events: none;
   }
-  .fn-services-page .fn-cta h2 { width: 100%; font-size: 26px; margin-top: 22px; }
-  .fn-services-page .fn-cta__actions { max-width: none; gap: 10px; margin-top: 34px; }
+  .fn-services-page .fn-cta h2 { width: 100%; max-width: none; font-size: clamp(20px, 5.6vw, 25px); line-height: 1.25; margin: 0 0 20px; text-align: center; }
+  .fn-services-page .fn-cta h2 strong { text-transform: uppercase; display: block; }
+  .fn-services-page .fn-cta__actions { max-width: none; width: 100%; display: flex; flex-direction: row; flex-wrap: wrap; justify-content: center; align-items: center; gap: 12px; margin-top: 0; }
   .fn-services-page .fn-cta .btn--header,
-  .fn-services-page .fn-cta__ghost { padding-inline: 18px; font-size: 13px; }
+  .fn-services-page .fn-cta__ghost { padding: 9px 18px; font-size: 13px; min-height: 36px; white-space: nowrap; flex: 0 0 auto; display: inline-flex; align-items: center; justify-content: center; }
 
   .fn-services-page .fn-footer__grid { display: flex; flex-direction: column; gap: 36px; }
   .fn-services-page .fn-footer__grid > div:last-child {
@@ -249,8 +261,8 @@
 }
 
 @media (max-width: 380px) {
-  .fn-services-page .fn-offer { flex-basis: 78%; }
-  .fn-services-page .fn-cta__actions > a { flex: 1 1 140px; }
+  .fn-services-page .fn-offer { flex: 0 0 min(74vw, 270px); width: min(74vw, 270px); }
+  .fn-services-page .fn-cta__actions > a { flex: 0 0 auto; }
   .fn-services-page .fn-process__col { padding-inline: 18px; }
   .fn-services-page .sv-compare__stats { flex-direction: column; gap: 14px; }
 }

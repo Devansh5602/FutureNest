@@ -83,8 +83,10 @@
     }
 
     function moveCards(direction) {
-      const card = row.firstElementChild;
-      const distance = card.getBoundingClientRect().width + parseFloat(getComputedStyle(row).columnGap);
+      const card = row.querySelector(':scope > :not([hidden])') || row.firstElementChild;
+      const style = getComputedStyle(row);
+      const gap = parseFloat(style.columnGap || style.gap || 0);
+      const distance = card ? (card.getBoundingClientRect().width + gap) : 280;
       row.scrollBy({ left: direction * distance, behavior: reduced.matches ? 'instant' : 'smooth' });
     }
 
@@ -110,6 +112,7 @@
     sections.forEach(function (section) {
       const filterBtns = section.querySelectorAll('.fn-opp-filter-btn');
       const cards = section.querySelectorAll('.fn-opp-card');
+      const grid = section.querySelector('.fn-opp-grid');
       if (!filterBtns.length || !cards.length) return;
 
       filterBtns.forEach(function (btn) {
@@ -130,8 +133,83 @@
               card.setAttribute('hidden', '');
             }
           });
+
+          if (grid) {
+            grid.scrollTo({ left: 0, behavior: 'instant' });
+            grid.dispatchEvent(new Event('scroll'));
+          }
         });
       });
+    });
+  }
+
+  function bindLiveMarquee() {
+    const liveSections = document.querySelectorAll('.fn-live');
+    if (!liveSections.length) return;
+
+    liveSections.forEach(function (sec) {
+      const track = sec.querySelector('.fn-live__track');
+      const prevBtn = sec.querySelector('[data-live="prev"]');
+      const nextBtn = sec.querySelector('[data-live="next"]');
+      if (!track) return;
+
+      let resumeTimer = null;
+      function getAnimation() {
+        if (typeof track.getAnimations === 'function') {
+          const anims = track.getAnimations();
+          if (anims && anims.length) return anims[0];
+        }
+        return null;
+      }
+
+      function stepCards(direction) {
+        const anim = getAnimation();
+        if (!anim) return;
+        const totalDuration = 36000;
+        const step = 4500;
+        let cur = (anim.currentTime || 0) % totalDuration;
+        if (cur < 0) cur += totalDuration;
+        cur += direction * step;
+        if (cur < 0) cur += totalDuration;
+        cur = cur % totalDuration;
+        anim.currentTime = cur;
+        anim.pause();
+
+        clearTimeout(resumeTimer);
+        resumeTimer = setTimeout(function () {
+          if (!track.matches(':hover')) {
+            anim.play();
+          }
+        }, 2200);
+      }
+
+      if (prevBtn) {
+        prevBtn.disabled = false;
+        prevBtn.addEventListener('click', function () {
+          stepCards(-1);
+        });
+      }
+      if (nextBtn) {
+        nextBtn.disabled = false;
+        nextBtn.addEventListener('click', function () {
+          stepCards(1);
+        });
+      }
+
+      sec.addEventListener('touchstart', function () {
+        const anim = getAnimation();
+        if (anim) anim.pause();
+      }, { passive: true });
+
+      sec.addEventListener('touchend', function () {
+        const anim = getAnimation();
+        clearTimeout(resumeTimer);
+        resumeTimer = setTimeout(function () {
+          if (anim && !track.matches(':hover')) {
+            anim.play();
+          }
+        }, 1500);
+      }, { passive: true });
     });
   }
 
@@ -142,10 +220,14 @@
     bindMobileMenu();
     bindNewsletter();
     bindOpportunityFilters();
-    bindCardRow(
-      document.getElementById('live-row'),
-      document.querySelector('[data-live="prev"]'),
-      document.querySelector('[data-live="next"]')
-    );
+    bindLiveMarquee();
+    document.querySelectorAll('.fn-opportunities').forEach(function (oppSection) {
+      const grid = oppSection.querySelector('.fn-opp-grid');
+      const prev = oppSection.querySelector('[data-opp="prev"]');
+      const next = oppSection.querySelector('[data-opp="next"]');
+      if (grid && prev && next) {
+        bindCardRow(grid, prev, next);
+      }
+    });
   });
 })();

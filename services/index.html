@@ -366,8 +366,22 @@
               <button type="button" class="fn-opp-filter-btn" data-filter="design-ops" aria-pressed="false">Design &amp; Supply Chain</button>
             </div>
 
+            <!-- Mobile Controls for Opportunities Carousel -->
+            <div class="fn-opp__controls fn-live__controls" aria-label="Placement opportunities navigation">
+              <button type="button" data-opp="prev" aria-controls="opp-grid" aria-label="Previous roles"><svg
+                  aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <path d="m14 5-7 7 7 7" />
+                </svg></button>
+              <button type="button" data-opp="next" aria-controls="opp-grid" aria-label="Next roles"><svg
+                  aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <path d="m10 5 7 7-7 7" />
+                </svg></button>
+            </div>
+
             <!-- 16 Placement Roles Grid -->
-            <div class="fn-opp-grid">
+            <div class="fn-opp-grid" id="opp-grid" tabindex="0" aria-label="Placement roles">
               <!-- 1. Supply chain Analyst -->
               <article class="fn-opp-card" data-category="design-ops">
                 <div class="fn-opp-card__top">
@@ -717,7 +731,9 @@
               </div>
             </div>
             <div class="fn-live__row" id="live-row" tabindex="0" aria-label="Placement cards">
-              <article class="fn-offer">
+              <div class="fn-live__track">
+                <div class="fn-live__group">
+                  <article class="fn-offer">
                 <div class="fn-offer__photo">
                   <picture>
                     <source srcset="../assets/shared/roles/dummy-user.webp" type="image/webp" />
@@ -805,6 +821,98 @@
                 <p class="fn-offer__role">Supply Chain Analyst &bull; Old Castle</p>
                 <div class="fn-chips"><span>USA</span><span>$85K / Annual</span></div>
               </article>
+                </div>
+                <div class="fn-live__group" aria-hidden="true">
+                  <article class="fn-offer">
+                <div class="fn-offer__photo">
+                  <picture>
+                    <source srcset="../assets/shared/roles/dummy-user.webp" type="image/webp" />
+                    <img class="fn-offer__img" src="../assets/shared/roles/dummy-user.png" alt="Form Patel - Software engineer at Auction" width="280" height="240" loading="lazy" />
+                  </picture>
+                </div>
+                <h3>Form Patel</h3>
+                <p class="fn-offer__role">Software engineer &bull; Auction</p>
+                <div class="fn-chips"><span>USA</span><span>$135K / Annual</span></div>
+              </article>
+              <article class="fn-offer">
+                <div class="fn-offer__photo">
+                  <picture>
+                    <source srcset="../assets/shared/roles/pratik-gubbawar.webp" type="image/webp" />
+                    <img class="fn-offer__img" src="../assets/shared/roles/pratik-gubbawar.png" alt="Pratik Gubbawar - Supply Chain Analyst at Amazon" width="280" height="240" loading="lazy" />
+                  </picture>
+                </div>
+                <h3>Pratik Gubbawar</h3>
+                <p class="fn-offer__role">Supply Chain Analyst &bull; Amazon</p>
+                <div class="fn-chips"><span>USA</span><span>$78K / Annual</span></div>
+              </article>
+              <article class="fn-offer">
+                <div class="fn-offer__photo">
+                  <picture>
+                    <source srcset="../assets/shared/roles/dummy-user.webp" type="image/webp" />
+                    <img class="fn-offer__img" src="../assets/shared/roles/dummy-user.png" alt="Sunal Sathvik - Financial Analyst at Baylor Scott & White Health" width="280" height="240" loading="lazy" />
+                  </picture>
+                </div>
+                <h3>Sunal Sathvik</h3>
+                <p class="fn-offer__role">Financial Analyst &bull; Baylor Scott & White Health</p>
+                <div class="fn-chips"><span>USA</span><span>$105K / Annual</span></div>
+              </article>
+              <article class="fn-offer">
+                <div class="fn-offer__photo">
+                  <picture>
+                    <source srcset="../assets/shared/roles/harsh-gohil.webp" type="image/webp" />
+                    <img class="fn-offer__img" src="../assets/shared/roles/harsh-gohil.png" alt="Harsh Gohil - Full stack Developer at Citi" width="280" height="240" loading="lazy" />
+                  </picture>
+                </div>
+                <h3>Harsh Gohil</h3>
+                <p class="fn-offer__role">Full stack Developer &bull; Citi</p>
+                <div class="fn-chips"><span>USA</span><span>$123K / Annual</span></div>
+              </article>
+              <article class="fn-offer">
+                <div class="fn-offer__photo">
+                  <picture>
+                    <source srcset="../assets/shared/roles/dummy-user.webp" type="image/webp" />
+                    <img class="fn-offer__img" src="../assets/shared/roles/dummy-user.png" alt="Jaydeep Singh - Business Analyst at CVS Health" width="280" height="240" loading="lazy" />
+                  </picture>
+                </div>
+                <h3>Jaydeep Singh</h3>
+                <p class="fn-offer__role">Business Analyst &bull; CVS Health</p>
+                <div class="fn-chips"><span>USA</span><span>$85K / Annual</span></div>
+              </article>
+              <article class="fn-offer">
+                <div class="fn-offer__photo">
+                  <picture>
+                    <source srcset="../assets/shared/roles/reema-patel.webp" type="image/webp" />
+                    <img class="fn-offer__img" src="../assets/shared/roles/reema-patel.png" alt="Reema Patel - Financial Analyst at Spark Fund" width="280" height="240" loading="lazy" />
+                  </picture>
+                </div>
+                <h3>Reema Patel</h3>
+                <p class="fn-offer__role">Financial Analyst &bull; Spark Fund</p>
+                <div class="fn-chips"><span>USA</span><span>$97K / Annual</span></div>
+              </article>
+              <article class="fn-offer">
+                <div class="fn-offer__photo">
+                  <picture>
+                    <source srcset="../assets/shared/roles/devang-soni.webp" type="image/webp" />
+                    <img class="fn-offer__img" src="../assets/shared/roles/devang-soni.png" alt="Devang Soni - Technical Support Engineer at Cloudflare" width="280" height="240" loading="lazy" />
+                  </picture>
+                </div>
+                <h3>Devang Soni</h3>
+                <p class="fn-offer__role">Technical Support Engineer &bull; Cloudflare</p>
+                <div class="fn-chips"><span>USA</span><span>$110K / Annual</span></div>
+              </article>
+              <article class="fn-offer">
+                <div class="fn-offer__photo">
+                  <picture>
+                    <source srcset="../assets/shared/roles/satya-sai-neeli.webp" type="image/webp" />
+                    <img class="fn-offer__img" src="../assets/shared/roles/satya-sai-neeli.png" alt="Satya Sai Neeli - Supply Chain Analyst at Old Castle" width="280" height="240" loading="lazy" />
+                  </picture>
+                </div>
+                <h3>Satya Sai Neeli</h3>
+                <p class="fn-offer__role">Supply Chain Analyst &bull; Old Castle</p>
+                <div class="fn-chips"><span>USA</span><span>$85K / Annual</span></div>
+              </article>
+                </div>
+              </div>
             </div>
         </div>
       </section>
