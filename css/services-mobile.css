@@ -228,29 +228,7 @@
   .fn-services-page .ab-faq__item { border-radius: 5px; }
   .fn-services-page .ab-faq__item summary { padding: 14px 12px; font-size: 12px; gap: 10px; }
 
-  .fn-services-page .fn-cta { background: radial-gradient(at 65% 50%, #f5ac25, #c57f00); padding: 0 16px 44px; overflow: visible; position: relative; text-align: center; margin-top: clamp(60px, 16vw, 90px); }
-  .fn-services-page .fn-cta picture { display: contents; }
-  .fn-services-page .fn-cta__portrait {
-    --fn-advisor-w: min(78vw, 300px);
-    position: relative;
-    z-index: 1;
-    display: block;
-    right: auto;
-    bottom: auto;
-    width: var(--fn-advisor-w);
-    max-width: none;
-    height: auto;
-    margin: 0 auto;
-    top: calc(-0.44 * var(--fn-advisor-w) * (895 / 934));
-    margin-bottom: calc(-0.44 * var(--fn-advisor-w) * (895 / 934) + 18px);
-    object-fit: contain;
-    pointer-events: none;
-  }
-  .fn-services-page .fn-cta h2 { width: 100%; max-width: none; font-size: clamp(20px, 5.6vw, 25px); line-height: 1.25; margin: 0 0 20px; text-align: center; }
-  .fn-services-page .fn-cta h2 strong { text-transform: uppercase; display: block; }
-  .fn-services-page .fn-cta__actions { max-width: none; width: 100%; display: flex; flex-direction: row; flex-wrap: wrap; justify-content: center; align-items: center; gap: 12px; margin-top: 0; }
-  .fn-services-page .fn-cta .btn--header,
-  .fn-services-page .fn-cta__ghost { padding: 9px 18px; font-size: 13px; min-height: 36px; white-space: nowrap; flex: 0 0 auto; display: inline-flex; align-items: center; justify-content: center; }
+
 
   .fn-services-page .fn-footer__grid { display: flex; flex-direction: column; gap: 36px; }
   .fn-services-page .fn-footer__grid > div:last-child {
@@ -262,7 +240,6 @@
 
 @media (max-width: 380px) {
   .fn-services-page .fn-offer { flex: 0 0 min(74vw, 270px); width: min(74vw, 270px); }
-  .fn-services-page .fn-cta__actions > a { flex: 0 0 auto; }
   .fn-services-page .fn-process__col { padding-inline: 18px; }
   .fn-services-page .sv-compare__stats { flex-direction: column; gap: 14px; }
 }

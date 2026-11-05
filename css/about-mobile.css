@@ -42,18 +42,11 @@
  .ab-faq__item { border-radius:5px; }
  .ab-faq__item summary { padding:14px 12px; font-size:12px; gap:10px; }
  .ab-faq__answer p { font-size:13px; }
- .fn-about-page .fn-cta { background:radial-gradient(at 65% 50%,#f5ac25,#c57f00); padding:0 16px 44px; overflow:visible; position:relative; text-align:center; margin-top:clamp(60px,16vw,90px); }
- .fn-about-page .fn-cta picture { display:contents; }
- .fn-about-page .fn-cta__portrait { --fn-advisor-w:min(78vw,300px); position:relative; z-index:1; display:block; right:auto; bottom:auto; width:var(--fn-advisor-w); max-width:none; height:auto; margin:0 auto; top:calc(-0.44 * var(--fn-advisor-w) * (895 / 934)); margin-bottom:calc(-0.44 * var(--fn-advisor-w) * (895 / 934) + 18px); object-fit:contain; pointer-events:none; }
- .fn-about-page .fn-cta h2 { width:100%; max-width:none; font-size:clamp(20px,5.6vw,25px); line-height:1.25; margin:0 0 20px; text-align:center; }
- .fn-about-page .fn-cta h2 strong { text-transform:uppercase; display:block; }
- .fn-about-page .fn-cta__actions { max-width:none; width:100%; display:flex; flex-direction:row; flex-wrap:wrap; justify-content:center; align-items:center; gap:12px; margin-top:0; }
- .fn-about-page .fn-cta .btn--header,.fn-about-page .fn-cta__ghost { padding:9px 18px; font-size:13px; min-height:36px; white-space:nowrap; flex:0 0 auto; display:inline-flex; align-items:center; justify-content:center; }
+
  .fn-about-page .fn-footer__grid { display:flex; flex-direction:column; gap:36px; }
  .fn-about-page .fn-footer__grid>div:last-child { order:-1; border-bottom:1px solid #ffffff30; padding-bottom:32px; }
 }
 @media(max-width:380px) {
  .ab-track-grid { width:300%; grid-template-rows:repeat(2,180px); }
- .fn-about-page .fn-cta__actions>a { flex:0 0 auto; }
  .ab-service-grid li { overflow-wrap:anywhere; }
 }

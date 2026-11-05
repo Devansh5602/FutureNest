@@ -268,13 +268,29 @@
   min-width: 100vw;
   justify-content: space-around;
   align-items: center;
-  gap: 3rem;
-  padding-inline: 1.5rem;
+  gap: 3.5rem;
+  padding-inline: 1.75rem;
 }
 .fn-marquee__group span {
   font-size: clamp(0.75rem, calc(var(--fn-layout-width) * 0.0085), 1rem);
   font-weight: 600;
-  letter-spacing: 0.42em;
+  letter-spacing: 0.35em;
+}
+.fn-marquee__item {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-shrink: 0;
+  white-space: nowrap;
+}
+.fn-marquee__logo {
+  height: clamp(1.25rem, calc(var(--fn-layout-width) * 0.015), 1.75rem);
+  width: auto;
+  max-width: 3rem;
+  object-fit: contain;
+  display: inline-block;
+  vertical-align: middle;
+  flex-shrink: 0;
 }
 
 @keyframes fn-marquee {
@@ -1074,6 +1090,12 @@
   .fn-cta {
     display: flex;
     flex-direction: column;
+    padding: 0 16px 44px;
+    text-align: center;
+    margin-top: clamp(60px, 16vw, 90px);
+  }
+  .fn-cta picture {
+    display: contents;
   }
   .fn-cta__portrait {
     position: relative;
@@ -1085,6 +1107,43 @@
   }
   .fn-cta > .fn-wrap {
     margin-top: -40%;
+  }
+  .fn-cta h2 {
+    width: 100%;
+    max-width: none;
+    font-size: clamp(20px, 5.6vw, 25px);
+    line-height: 1.25;
+    margin: 0 0 20px;
+    text-align: center;
+  }
+  .fn-cta h2 strong {
+    text-transform: uppercase;
+    display: block;
+  }
+  .fn-cta__actions {
+    max-width: none;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    margin-top: 0;
+  }
+  .fn-cta .btn--header,
+  .fn-cta__ghost {
+    padding: 9px 18px;
+    font-size: 13px;
+    min-height: 36px;
+    white-space: nowrap;
+    flex: 0 0 auto;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .fn-cta__actions > a {
+    flex: 0 0 auto;
   }
 }
 @media (min-width: 601px) and (max-width: 900px) {
