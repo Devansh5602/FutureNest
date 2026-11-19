@@ -524,13 +524,13 @@
   position: relative;
   isolation: isolate;
   overflow: hidden;
-  min-height: clamp(38.75rem, calc(var(--fn-layout-width) * 0.563), 67.5rem);
+  /* min-height: clamp(38.75rem, calc(var(--fn-layout-width) * 0.563), 67.5rem); */
+  aspect-ratio: 481 / 270;
   display: flex;
-  align-items: flex-end;
-  padding: 6.25rem 0
-    clamp(2.8125rem, calc(var(--fn-layout-width) * 0.042), 5rem);
-  background: #596665 url("../assets/services/placements.png") no-repeat left
-    top / auto 100%;
+  align-items: center;
+  /* padding: 6.25rem 0
+    clamp(2.8125rem, calc(var(--fn-layout-width) * 0.042), 5rem); */
+  background: url("../assets/services/placements.png") no-repeat center / 100% 100%;
   color: white;
 }
 .fn-live::before {

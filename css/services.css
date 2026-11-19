@@ -60,7 +60,7 @@
 .fn-services-page .fn-process { padding-bottom:clamp(5rem,calc(var(--fn-layout-width) * 0.08),9.5625rem); }
 .fn-services-page .fn-process__col--seeker { background:url('../assets/services/process-seeker.png') center/cover; }
 .fn-services-page .fn-process__col--employer { background:url('../assets/services/process-employer.png') center/cover; }
-.fn-services-page .fn-live { background-image:url('../assets/services/placements.png'); background-color:#171717; }
+.fn-services-page .fn-live { background-image:url('../assets/services/placements.png'); }
 .fn-services-page .fn-live::before { background:transparent; }
 .sv-stack { padding-block:clamp(4.375rem,calc(var(--fn-layout-width) * 0.08),9.625rem); }
 .sv-feature { position:relative; display:grid; grid-template-columns:1fr 1.1fr; gap:6%; align-items:center; border:0.0625rem solid #ccc; border-radius:1rem; background:white; padding:clamp(1.5625rem,calc(var(--fn-layout-width) * 0.033),3.9375rem); margin-bottom:2rem; }
