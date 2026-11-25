@@ -1366,7 +1366,6 @@
 
 .fn-home #page-wrapper {
   overflow-x: clip;
-  overflow-y: visible;
 }
 
 @media (min-width: 601px) and (max-width: 1024px) {
@@ -1377,6 +1376,16 @@
   .fn-hero__copy {
     width: 84%;
     margin-left: 8%;
+  }
+  .fn-live {
+    aspect-ratio: auto;
+    min-height: auto;
+    height: auto;
+    padding-block: clamp(40px, 5vw, 60px);
+    background: url('../assets/services/placements.png') no-repeat left center / cover;
+  }
+  .fn-live__head {
+    margin-bottom: clamp(24px, 3.5vw, 36px);
   }
 }
 @media (max-width: 480px) {

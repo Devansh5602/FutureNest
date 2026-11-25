@@ -320,11 +320,8 @@
   }
 
   .fn-homepage .fn-live {
-    background-image: url('../assets/home/mobile/placement-background.png');
-    background-position: center top;
-    background-size: auto 100%;
-    background-repeat: no-repeat;
-    min-height: 580px;
+    background: url('../assets/services/placements.png') no-repeat left top / auto 100%;
+    /* min-height: 580px; */
     padding-block: 45px;
   }
 
@@ -514,6 +511,20 @@
 
   .fn-homepage .fn-cta > .fn-wrap {
     margin-top: -27%;
+  }
+}
+
+@media (min-width: 601px) and (max-width: 1024px) {
+  .fn-homepage .fn-live {
+    aspect-ratio: auto;
+    min-height: auto;
+    height: auto;
+    padding-block: clamp(40px, 5vw, 60px);
+    background: url('../assets/services/placements.png') no-repeat left center / cover;
+  }
+
+  .fn-homepage .fn-live__head {
+    margin-bottom: clamp(24px, 3.5vw, 36px);
   }
 }
 

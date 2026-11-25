@@ -179,7 +179,9 @@
       if (!benefitsFrame) benefitsFrame = requestAnimationFrame(updateBenefits);
     }
     if (benefits) {
+      const pageWrapper = document.getElementById('page-wrapper');
       window.addEventListener('scroll', queueBenefits, { passive: true });
+      if (pageWrapper) pageWrapper.addEventListener('scroll', queueBenefits, { passive: true });
       window.addEventListener('resize', queueBenefits, { passive: true });
       reduced.addEventListener('change', queueBenefits);
       updateBenefits();

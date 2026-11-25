@@ -14,12 +14,23 @@
     const hamburger = document.getElementById('hamburger-btn');
     const mobileNav = document.getElementById('mobile-nav');
     const backdrop = document.getElementById('mobile-nav-backdrop');
+    const pageWrapper = document.getElementById('page-wrapper');
+
+    function isWrapperScroll() {
+      return Boolean(
+        pageWrapper &&
+        getComputedStyle(pageWrapper).overflowY === 'auto' &&
+        pageWrapper.scrollHeight > pageWrapper.clientHeight
+      );
+    }
 
     if (header) {
       const checkScroll = function () {
-        header.classList.toggle('header--scrolled', window.scrollY > 20);
+        const scrollTop = isWrapperScroll() ? pageWrapper.scrollTop : window.scrollY;
+        header.classList.toggle('header--scrolled', scrollTop > 20);
       };
       window.addEventListener('scroll', checkScroll, { passive: true });
+      if (pageWrapper) pageWrapper.addEventListener('scroll', checkScroll, { passive: true });
       checkScroll();
     }
 
@@ -65,8 +76,14 @@
         if (!target) return;
         event.preventDefault();
         const headerHeight = header ? header.offsetHeight : 0;
-        const top = target.getBoundingClientRect().top + window.scrollY - headerHeight - 16;
-        window.scrollTo({ top: top, behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'instant' : 'smooth' });
+        const behavior = matchMedia('(prefers-reduced-motion: reduce)').matches ? 'instant' : 'smooth';
+        if (isWrapperScroll()) {
+          const top = target.getBoundingClientRect().top + pageWrapper.scrollTop - headerHeight - 16;
+          pageWrapper.scrollTo({ top: top, behavior: behavior });
+        } else {
+          const top = target.getBoundingClientRect().top + window.scrollY - headerHeight - 16;
+          window.scrollTo({ top: top, behavior: behavior });
+        }
         setMenuOpen(false);
       });
     });
